@@ -21,6 +21,7 @@ namespace Home_Work_15_01_2025_part_1
         private void buttonClear_Click (object sender, EventArgs e)
         {
             textBoxEnter.Text = string.Empty;
+            textBoxResult.Text = string.Empty;
         }
     }
 }
