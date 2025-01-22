@@ -21,6 +21,11 @@ namespace Refuling_cars_2025_01_20
 
         private void textBoxPriseOil_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void comboBoxPetrol_SelectedIndexChanged(object sender, EventArgs e)
+        {
             switch (comboBoxPetrol.SelectedIndex)
             {
                 case 0:
@@ -38,7 +43,33 @@ namespace Refuling_cars_2025_01_20
                 case 4:
                     textBoxPriseOil.Text = "7,00";
                     break;
+                default:
+                    textBoxPriseOil.Text = string.Empty;
+                    break;
             }
+        }
+
+        private void radioButtonLitre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonLitre.Checked == true)
+            {
+                textBoxEnterLiter.Enabled = true;
+                textBoxEnterSum.Enabled = false;
+            }
+        }
+
+        private void radioButtonSum_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonSum.Checked == true)
+            {
+                textBoxEnterLiter.Enabled = false;
+                textBoxEnterSum.Enabled = true;
+            }
+        }
+
+        private void textBoxEnterLiter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }
