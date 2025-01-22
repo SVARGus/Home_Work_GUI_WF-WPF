@@ -63,7 +63,13 @@ namespace Home_Work_15_01_2025_part_2
                 MessageBox.Show("Выберите пол", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            MessageBox.Show("");
+            string fullName = string.Concat(textBoxLastname.Text, " ", textBoxFirstname.Text, " ", textBoxMiddlename.Text);
+            string dateOfBirthStr = dateTimePickerBirth.Value.ToString("dd.MM.yyyy");
+            string genderStr = radioButtonGenderMale.Checked ? "Мужской" : radioButtonGenderWoman.Checked ? "Женский" : "Не указан";
+            string message = string.Concat("ФИО: ", fullName, "\n", "Место проживания: ", textBoxCountry.Text, ", ",
+                textBoxCity.Text, "\n", "Телефон: ", textBoxPhone.Text, "\n", "Дата рождения: ", dateOfBirthStr, "г. \n",
+                "Пол: ", genderStr);
+            MessageBox.Show(message);
         }
     }
 }
