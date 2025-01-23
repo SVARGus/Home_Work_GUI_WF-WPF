@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             groupBoxRefueling = new GroupBox();
             groupBoxPaidRefueling = new GroupBox();
             labelSumRefueling = new Label();
@@ -41,6 +42,7 @@
             radioButtonLitre = new RadioButton();
             labelRub1 = new Label();
             comboBoxPetrol = new ComboBox();
+            productBindingSource = new BindingSource(components);
             labelPrice = new Label();
             labelPetrol = new Label();
             textBoxPriseOil = new TextBox();
@@ -69,6 +71,7 @@
             groupBoxRefueling.SuspendLayout();
             groupBoxPaidRefueling.SuspendLayout();
             groupBoxLitreSum.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)productBindingSource).BeginInit();
             groupBoxMimiCafe.SuspendLayout();
             groupBoxPaidCafe.SuspendLayout();
             groupBoxTotalPaid.SuspendLayout();
@@ -114,7 +117,7 @@
             // 
             labelSumRefueling.AutoSize = true;
             labelSumRefueling.Font = new Font("Segoe UI", 20F);
-            labelSumRefueling.Location = new Point(98, 60);
+            labelSumRefueling.Location = new Point(86, 60);
             labelSumRefueling.Name = "labelSumRefueling";
             labelSumRefueling.Size = new Size(99, 46);
             labelSumRefueling.TabIndex = 12;
@@ -146,6 +149,9 @@
             textBoxEnterSum.Name = "textBoxEnterSum";
             textBoxEnterSum.Size = new Size(62, 27);
             textBoxEnterSum.TabIndex = 8;
+            textBoxEnterSum.KeyDown += textBoxEnter_KeyDown;
+            textBoxEnterSum.KeyPress += textBoxEnterSum_KeyPress;
+            textBoxEnterSum.Leave += textBoxEnterSum_UpdateLabelOnLeave;
             // 
             // labelLitre
             // 
@@ -164,7 +170,9 @@
             textBoxEnterLiter.Name = "textBoxEnterLiter";
             textBoxEnterLiter.Size = new Size(62, 27);
             textBoxEnterLiter.TabIndex = 6;
+            textBoxEnterLiter.KeyDown += textBoxEnter_KeyDown;
             textBoxEnterLiter.KeyPress += textBoxEnterLiter_KeyPress;
+            textBoxEnterLiter.Leave += textBoxEnterLiter_UpdateLabelOnLeave;
             // 
             // groupBoxLitreSum
             // 
@@ -215,14 +223,20 @@
             // 
             // comboBoxPetrol
             // 
+            comboBoxPetrol.DataSource = productBindingSource;
+            comboBoxPetrol.DisplayMember = "Name";
             comboBoxPetrol.FormattingEnabled = true;
-            comboBoxPetrol.Items.AddRange(new object[] { "АИ-80", "АИ-92", "АИ-95", "АИ-98", "АИ-100" });
             comboBoxPetrol.Location = new Point(66, 47);
             comboBoxPetrol.Margin = new Padding(3, 4, 3, 4);
             comboBoxPetrol.Name = "comboBoxPetrol";
             comboBoxPetrol.Size = new Size(138, 28);
             comboBoxPetrol.TabIndex = 3;
+            comboBoxPetrol.ValueMember = "Price";
             comboBoxPetrol.SelectedIndexChanged += comboBoxPetrol_SelectedIndexChanged;
+            // 
+            // productBindingSource
+            // 
+            productBindingSource.DataSource = typeof(Product);
             // 
             // labelPrice
             // 
@@ -281,6 +295,7 @@
             // 
             // textBoxProductCount4
             // 
+            textBoxProductCount4.Enabled = false;
             textBoxProductCount4.Location = new Point(198, 196);
             textBoxProductCount4.Margin = new Padding(3, 4, 3, 4);
             textBoxProductCount4.Name = "textBoxProductCount4";
@@ -307,9 +322,11 @@
             checkBox4.TabIndex = 25;
             checkBox4.Text = "Кола";
             checkBox4.UseVisualStyleBackColor = true;
+            checkBox4.CheckedChanged += checkBox4_CheckedChanged;
             // 
             // textBoxProductCount3
             // 
+            textBoxProductCount3.Enabled = false;
             textBoxProductCount3.Location = new Point(198, 148);
             textBoxProductCount3.Margin = new Padding(3, 4, 3, 4);
             textBoxProductCount3.Name = "textBoxProductCount3";
@@ -336,9 +353,11 @@
             checkBox3.TabIndex = 22;
             checkBox3.Text = "Фри-картоха";
             checkBox3.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
             // 
             // textBoxProductCount2
             // 
+            textBoxProductCount2.Enabled = false;
             textBoxProductCount2.Location = new Point(198, 103);
             textBoxProductCount2.Margin = new Padding(3, 4, 3, 4);
             textBoxProductCount2.Name = "textBoxProductCount2";
@@ -365,9 +384,11 @@
             checkBox2.TabIndex = 19;
             checkBox2.Text = "Гамбургер";
             checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // textBoxProductCount1
             // 
+            textBoxProductCount1.Enabled = false;
             textBoxProductCount1.Location = new Point(198, 61);
             textBoxProductCount1.Margin = new Padding(3, 4, 3, 4);
             textBoxProductCount1.Name = "textBoxProductCount1";
@@ -413,6 +434,7 @@
             checkBox1.TabIndex = 14;
             checkBox1.Text = "Хот-дог";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // groupBoxPaidCafe
             // 
@@ -431,7 +453,7 @@
             // 
             labelSumCafe.AutoSize = true;
             labelSumCafe.Font = new Font("Segoe UI", 20F);
-            labelSumCafe.Location = new Point(98, 60);
+            labelSumCafe.Location = new Point(86, 60);
             labelSumCafe.Name = "labelSumCafe";
             labelSumCafe.Size = new Size(99, 46);
             labelSumCafe.TabIndex = 12;
@@ -508,6 +530,7 @@
             groupBoxPaidRefueling.PerformLayout();
             groupBoxLitreSum.ResumeLayout(false);
             groupBoxLitreSum.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)productBindingSource).EndInit();
             groupBoxMimiCafe.ResumeLayout(false);
             groupBoxMimiCafe.PerformLayout();
             groupBoxPaidCafe.ResumeLayout(false);
@@ -557,5 +580,6 @@
         private Button buttonFinalPaid;
         private Label labelTotalSum;
         private Label label5;
+        private BindingSource productBindingSource;
     }
 }
