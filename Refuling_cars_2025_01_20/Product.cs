@@ -20,7 +20,7 @@ namespace Refuling_cars_2025_01_20
         }
         public override string ToString()
         {
-            return $"Продукция: {Name}, Цена: {Price}, Количество: {Volume}";
+            return $"Продукция: {Name}, Цена: {Price.ToString("F2")} руб., Количество: {Volume.ToString("F2")}, Сумма: {(Price * Volume).ToString("F2")} руб.";
         }
     }
 }

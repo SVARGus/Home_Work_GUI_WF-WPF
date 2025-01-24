@@ -5,13 +5,26 @@ namespace Refuling_cars_2025_01_20
 {
     public partial class Form1 : Form
     {
+        private Dictionary<string, Product> saleOfDay;
+        private System.Windows.Forms.Timer resetTimer;
         public Form1()
         {
             InitializeComponent();
-            // Инициализация списка марок бензина и цен для каждой марки
-            //productBindingSource.DataSource = Storage.GetProductOils(); // При закрытии окна выдает ошибку
             List<Product> products = Storage.GetProductOils();
             comboBoxPetrol.DataSource = products;
+            saleOfDay = new Dictionary<string, Product>();
+            resetTimer = new System.Windows.Forms.Timer
+            {
+                Interval = 10000,
+                Enabled = false
+            };
+            resetTimer.Tick += ResetTimer_Tick;
+        }
+
+        private void ResetTimer_Tick(object? sender, EventArgs e)
+        {
+            resetTimer.Stop();
+            ResetForm();
         }
 
         private void groupBoxRefueling_Enter(object sender, EventArgs e)
@@ -120,9 +133,9 @@ namespace Refuling_cars_2025_01_20
             if (double.TryParse(labelSumRefueling.Text, out double sumRefueling)
                 && double.TryParse(labelSumCafe.Text, out double sumCafe))
             {
-                if(radioButtonLitre.Checked)
+                if (radioButtonLitre.Checked)
                     labelTotalSum.Text = (sumRefueling + sumCafe).ToString("F2");
-                else if(radioButtonSum.Checked)
+                else if (radioButtonSum.Checked)
                     labelTotalSum.Text = (SumOil + sumCafe).ToString("F2");
             }
             else
@@ -202,9 +215,9 @@ namespace Refuling_cars_2025_01_20
         private void textBoxProductCount_Leave(object sender, EventArgs e)
         {
             List<double> listSumProduct = new List<double>() { 0, 0, 0, 0 };
-            if(checkBox1.Checked)
+            if (checkBox1.Checked)
             {
-                if(double.TryParse(textBoxProductCount1.Text, out double inputSumProduct) 
+                if (double.TryParse(textBoxProductCount1.Text, out double inputSumProduct)
                     && double.TryParse(textBoxPrise1.Text, out double prises))
                     listSumProduct[0] = inputSumProduct * prises;
                 else
@@ -244,6 +257,122 @@ namespace Refuling_cars_2025_01_20
                 listSumProduct[3] = 0;
             labelSumCafe.Text = (listSumProduct.Sum()).ToString("F2");
             calculateLabelSum();
+        }
+        private void ResetForm() // Сброс формы до базового
+        {
+            comboBoxPetrol.SelectedIndex = 0;
+
+            radioButtonLitre.Checked = false;
+            textBoxEnterLiter.Text = string.Empty;
+            textBoxEnterLiter.Enabled = false;
+
+            radioButtonSum.Checked = false;
+            textBoxEnterSum.Text = string.Empty;
+            textBoxEnterSum.Enabled = false;
+
+            checkBox1.Checked = false;
+            textBoxProductCount1.Text = string.Empty;
+            textBoxProductCount1.Enabled = false;
+            checkBox2.Checked = false;
+            textBoxProductCount2.Text = string.Empty;
+            textBoxProductCount2.Enabled = false;
+            checkBox3.Checked = false;
+            textBoxProductCount3.Text = string.Empty;
+            textBoxProductCount3.Enabled = false;
+            checkBox4.Checked = false;
+            textBoxProductCount4.Text = string.Empty;
+            textBoxProductCount4.Enabled = false;
+
+            labelSumRefueling.Text = "0,00";
+            labelSumCafe.Text = "0,00";
+            labelTotalSum.Text = "0,00";
+            labelRub3.Text = "руб.";
+        }
+        private string DisplayCashCheck(List<Product> products)
+        {
+            string display = "Чек с заправки Giga-OIL";
+            double sumCheck = 0;
+            foreach (var product in products)
+            {
+                display += "\n" + product.ToString();
+                sumCheck += (product.Price * product.Volume);
+            }
+            display += $"\n\nИтоговая сумма {sumCheck.ToString("F2")} руб.";
+            return display;
+        }
+        private List<Product> GetProductsCheck()
+        {
+            Product product = new Product();
+            List<Product> products = new List<Product>();
+            if (comboBoxPetrol.Enabled && (radioButtonLitre.Enabled || radioButtonSum.Enabled))
+            {
+                product = new Product();
+                product.Name = comboBoxPetrol.Text;
+                product.Price = double.Parse(textBoxPriseOil.Text);
+                if (radioButtonLitre.Checked)
+                    product.Volume = double.Parse(textBoxEnterLiter.Text);
+                else
+                    product.Volume = double.Parse(textBoxEnterSum.Text) / product.Price;
+                products.Add(product);
+            }
+            if (checkBox1.Checked)
+            {
+                product = new Product();
+                product.Name = checkBox1.Text;
+                product.Price = double.Parse(textBoxPrise1.Text);
+                product.Volume = double.Parse(textBoxProductCount1.Text);
+                products.Add(product);
+            }
+            if (checkBox2.Checked)
+            {
+                product = new Product();
+                product.Name = checkBox2.Text;
+                product.Price = double.Parse(textBoxPrise2.Text);
+                product.Volume = double.Parse(textBoxProductCount2.Text);
+                products.Add(product);
+            }
+            if (checkBox3.Checked)
+            {
+                product = new Product();
+                product.Name = checkBox3.Text;
+                product.Price = double.Parse(textBoxPrise3.Text);
+                product.Volume = double.Parse(textBoxProductCount3.Text);
+                products.Add(product);
+            }
+            if (checkBox4.Checked)
+            {
+                product = new Product();
+                product.Name = checkBox4.Text;
+                product.Price = double.Parse(textBoxPrise4.Text);
+                product.Volume = double.Parse(textBoxProductCount4.Text);
+                products.Add(product);
+            }
+            return products;
+        }
+        private void DaySaleBaseProductAdd(Product product)
+        {
+            if (saleOfDay.ContainsKey(product.Name))
+                saleOfDay[product.Name].Volume += product.Volume;
+            else
+                saleOfDay.Add(product.Name, product);
+        }
+
+        private void buttonFinalPaid_Click(object sender, EventArgs e)
+        {
+            List<Product> resultProduct = GetProductsCheck();
+            foreach (Product product in resultProduct)
+            {
+                DaySaleBaseProductAdd(product);
+            }
+            var result = MessageBox.Show(DisplayCashCheck(resultProduct), "ЧЕК об Оплате", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                ResetForm();
+            }
+            else if (result == DialogResult.No)
+            {
+                resetTimer.Start();
+            }
         }
     }
 }

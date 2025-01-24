@@ -505,6 +505,7 @@
             buttonFinalPaid.TabIndex = 15;
             buttonFinalPaid.Text = "ОПЛАТИТЬ";
             buttonFinalPaid.UseVisualStyleBackColor = false;
+            buttonFinalPaid.Click += buttonFinalPaid_Click;
             // 
             // labelTotalSum
             // 
@@ -513,7 +514,7 @@
             labelTotalSum.Name = "labelTotalSum";
             labelTotalSum.Size = new Size(201, 46);
             labelTotalSum.TabIndex = 14;
-            labelTotalSum.Text = "00,00";
+            labelTotalSum.Text = "0,00";
             labelTotalSum.TextAlign = ContentAlignment.TopRight;
             // 
             // label5
