@@ -51,7 +51,7 @@
             textBoxPrise4 = new TextBox();
             checkBox4 = new CheckBox();
             textBoxProductCount3 = new TextBox();
-            textBoxPris3 = new TextBox();
+            textBoxPrise3 = new TextBox();
             checkBox3 = new CheckBox();
             textBoxProductCount2 = new TextBox();
             textBoxPrise2 = new TextBox();
@@ -115,13 +115,13 @@
             // 
             // labelSumRefueling
             // 
-            labelSumRefueling.AutoSize = true;
             labelSumRefueling.Font = new Font("Segoe UI", 20F);
-            labelSumRefueling.Location = new Point(86, 60);
+            labelSumRefueling.Location = new Point(7, 60);
             labelSumRefueling.Name = "labelSumRefueling";
-            labelSumRefueling.Size = new Size(99, 46);
+            labelSumRefueling.Size = new Size(178, 46);
             labelSumRefueling.TabIndex = 12;
-            labelSumRefueling.Text = "00,00";
+            labelSumRefueling.Text = "0,00";
+            labelSumRefueling.TextAlign = ContentAlignment.TopRight;
             // 
             // labelRub3
             // 
@@ -150,7 +150,7 @@
             textBoxEnterSum.Size = new Size(62, 27);
             textBoxEnterSum.TabIndex = 8;
             textBoxEnterSum.KeyDown += textBoxEnter_KeyDown;
-            textBoxEnterSum.KeyPress += textBoxEnterSum_KeyPress;
+            textBoxEnterSum.KeyPress += textBoxEnter_KeyPress;
             textBoxEnterSum.Leave += textBoxEnterSum_UpdateLabelOnLeave;
             // 
             // labelLitre
@@ -171,7 +171,7 @@
             textBoxEnterLiter.Size = new Size(62, 27);
             textBoxEnterLiter.TabIndex = 6;
             textBoxEnterLiter.KeyDown += textBoxEnter_KeyDown;
-            textBoxEnterLiter.KeyPress += textBoxEnterLiter_KeyPress;
+            textBoxEnterLiter.KeyPress += textBoxEnter_KeyPress;
             textBoxEnterLiter.Leave += textBoxEnterLiter_UpdateLabelOnLeave;
             // 
             // groupBoxLitreSum
@@ -197,7 +197,7 @@
             radioButtonSum.TabStop = true;
             radioButtonSum.Text = "Сумма";
             radioButtonSum.UseVisualStyleBackColor = true;
-            radioButtonSum.CheckedChanged += radioButtonSum_CheckedChanged;
+            radioButtonSum.CheckedChanged += radioButton_CheckedChanged;
             // 
             // radioButtonLitre
             // 
@@ -210,7 +210,7 @@
             radioButtonLitre.TabStop = true;
             radioButtonLitre.Text = "Литраж";
             radioButtonLitre.UseVisualStyleBackColor = true;
-            radioButtonLitre.CheckedChanged += radioButtonLitre_CheckedChanged;
+            radioButtonLitre.CheckedChanged += radioButton_CheckedChanged;
             // 
             // labelRub1
             // 
@@ -273,7 +273,7 @@
             groupBoxMimiCafe.Controls.Add(textBoxPrise4);
             groupBoxMimiCafe.Controls.Add(checkBox4);
             groupBoxMimiCafe.Controls.Add(textBoxProductCount3);
-            groupBoxMimiCafe.Controls.Add(textBoxPris3);
+            groupBoxMimiCafe.Controls.Add(textBoxPrise3);
             groupBoxMimiCafe.Controls.Add(checkBox3);
             groupBoxMimiCafe.Controls.Add(textBoxProductCount2);
             groupBoxMimiCafe.Controls.Add(textBoxPrise2);
@@ -301,6 +301,9 @@
             textBoxProductCount4.Name = "textBoxProductCount4";
             textBoxProductCount4.Size = new Size(61, 27);
             textBoxProductCount4.TabIndex = 27;
+            textBoxProductCount4.KeyDown += textBoxEnter_KeyDown;
+            textBoxProductCount4.KeyPress += textBoxProductCount_KeyPress;
+            textBoxProductCount4.Leave += textBoxProductCount_Leave;
             // 
             // textBoxPrise4
             // 
@@ -332,16 +335,19 @@
             textBoxProductCount3.Name = "textBoxProductCount3";
             textBoxProductCount3.Size = new Size(61, 27);
             textBoxProductCount3.TabIndex = 24;
+            textBoxProductCount3.KeyDown += textBoxEnter_KeyDown;
+            textBoxProductCount3.KeyPress += textBoxProductCount_KeyPress;
+            textBoxProductCount3.Leave += textBoxProductCount_Leave;
             // 
-            // textBoxPris3
+            // textBoxPrise3
             // 
-            textBoxPris3.Enabled = false;
-            textBoxPris3.Location = new Point(127, 148);
-            textBoxPris3.Margin = new Padding(3, 4, 3, 4);
-            textBoxPris3.Name = "textBoxPris3";
-            textBoxPris3.Size = new Size(54, 27);
-            textBoxPris3.TabIndex = 23;
-            textBoxPris3.Text = "7,20";
+            textBoxPrise3.Enabled = false;
+            textBoxPrise3.Location = new Point(127, 148);
+            textBoxPrise3.Margin = new Padding(3, 4, 3, 4);
+            textBoxPrise3.Name = "textBoxPrise3";
+            textBoxPrise3.Size = new Size(54, 27);
+            textBoxPrise3.TabIndex = 23;
+            textBoxPrise3.Text = "7,20";
             // 
             // checkBox3
             // 
@@ -363,6 +369,9 @@
             textBoxProductCount2.Name = "textBoxProductCount2";
             textBoxProductCount2.Size = new Size(61, 27);
             textBoxProductCount2.TabIndex = 21;
+            textBoxProductCount2.KeyDown += textBoxEnter_KeyDown;
+            textBoxProductCount2.KeyPress += textBoxProductCount_KeyPress;
+            textBoxProductCount2.Leave += textBoxProductCount_Leave;
             // 
             // textBoxPrise2
             // 
@@ -394,6 +403,9 @@
             textBoxProductCount1.Name = "textBoxProductCount1";
             textBoxProductCount1.Size = new Size(61, 27);
             textBoxProductCount1.TabIndex = 18;
+            textBoxProductCount1.KeyDown += textBoxEnter_KeyDown;
+            textBoxProductCount1.KeyPress += textBoxProductCount_KeyPress;
+            textBoxProductCount1.Leave += textBoxProductCount_Leave;
             // 
             // textBoxPrise1
             // 
@@ -451,13 +463,13 @@
             // 
             // labelSumCafe
             // 
-            labelSumCafe.AutoSize = true;
             labelSumCafe.Font = new Font("Segoe UI", 20F);
-            labelSumCafe.Location = new Point(86, 60);
+            labelSumCafe.Location = new Point(6, 60);
             labelSumCafe.Name = "labelSumCafe";
-            labelSumCafe.Size = new Size(99, 46);
+            labelSumCafe.Size = new Size(179, 46);
             labelSumCafe.TabIndex = 12;
-            labelSumCafe.Text = "00,00";
+            labelSumCafe.Text = "0,00";
+            labelSumCafe.TextAlign = ContentAlignment.TopRight;
             // 
             // label3
             // 
@@ -496,13 +508,13 @@
             // 
             // labelTotalSum
             // 
-            labelTotalSum.AutoSize = true;
             labelTotalSum.Font = new Font("Segoe UI", 20F);
-            labelTotalSum.Location = new Point(393, 81);
+            labelTotalSum.Location = new Point(291, 81);
             labelTotalSum.Name = "labelTotalSum";
-            labelTotalSum.Size = new Size(99, 46);
+            labelTotalSum.Size = new Size(201, 46);
             labelTotalSum.TabIndex = 14;
             labelTotalSum.Text = "00,00";
+            labelTotalSum.TextAlign = ContentAlignment.TopRight;
             // 
             // label5
             // 
@@ -571,7 +583,7 @@
         private TextBox textBoxPrise4;
         private CheckBox checkBox4;
         private TextBox textBoxProductCount3;
-        private TextBox textBoxPris3;
+        private TextBox textBoxPrise3;
         private CheckBox checkBox3;
         private TextBox textBoxProductCount2;
         private TextBox textBoxPrise2;
