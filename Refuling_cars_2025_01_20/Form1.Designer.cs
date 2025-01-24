@@ -537,6 +537,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
             groupBoxRefueling.ResumeLayout(false);
             groupBoxRefueling.PerformLayout();
             groupBoxPaidRefueling.ResumeLayout(false);

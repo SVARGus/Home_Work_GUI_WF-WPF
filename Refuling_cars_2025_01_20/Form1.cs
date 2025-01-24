@@ -374,5 +374,25 @@ namespace Refuling_cars_2025_01_20
                 resetTimer.Start();
             }
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string resultMessage = "Результаты работы за смену (день): \n";
+            double revenueOfDay = 0;
+            foreach(var product in saleOfDay)
+            {
+                resultMessage += product.ToString() + "\n";
+                revenueOfDay += product.Value.Price * product.Value.Volume;
+            }
+            resultMessage += "\n" + $"ИТОГО выручка за смену: {revenueOfDay.ToString("F2")} руб.";
+            var result = MessageBox.Show(resultMessage, 
+                "Закрытие смены (программы)", 
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Information);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
