@@ -9,6 +9,9 @@ MessageBox. После того, как число отгадано, необходимо вывести
 ситуации).
  */
 
+using System;
+using System.Reflection;
+
 namespace Home_Work_15_01_2025_part_4
 {
     public partial class Form1 : Form
@@ -31,13 +34,13 @@ namespace Home_Work_15_01_2025_part_4
         {
             if (string.IsNullOrEmpty(textBoxEnterNum.Text) || !int.TryParse(textBoxEnterNum.Text, out int inputUpNumSearch) || inputUpNumSearch <= 1)
             {
-                MessageBox.Show("Произошла ошибка при выборе диапазона загадывания!\nЗагадываемый диапазон должен быть больше чем 1", 
-                    "Ошибка", 
+                MessageBox.Show("Произошла ошибка при выборе диапазона загадывания!\nЗагадываемый диапазон должен быть больше чем 1",
+                    "Ошибка",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
-            if(inputUpNumSearch > 200)
+            if (inputUpNumSearch > 200)
             {
                 MessageBox.Show("Диапазон слишком большой, очень долго будем угадывать!\nЗагадайте диапазон до 200",
                     "Ошибка",
@@ -46,9 +49,9 @@ namespace Home_Work_15_01_2025_part_4
                 return;
             }
             List<int> numbers = Enumerable.Range(1, inputUpNumSearch).ToList();
-            bool exit= false;
+            bool exit = false;
             int count = 0;
-            while(exit)
+            while (!exit)
             {
                 ++count;
                 exit = FirstGame(numbers, count);
@@ -56,26 +59,79 @@ namespace Home_Work_15_01_2025_part_4
         }
         private bool FirstGame(List<int> list, int count, int index = 0)
         {
+            if (list.Count == 0)
+            {
+                MessageBox.Show($"Вы явно забыли свое число или не загадали его",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return true;
+                return true;
+            }
             Random random = new Random();
             index = random.Next(0, list.Count);
-            var result = MessageBox.Show($"Ваше загаданное число {list[index]}?", 
+            var result = MessageBox.Show($"Ваше загаданное число {list[index]}?",
                 $"попытка отгадать #{count}",
-                MessageBoxButtons.YesNo, 
+                MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                MessageBox.Show($"Ваше загаданное число {list[index]} было отгадано за {count} попыток",
+                    "Число отгадано",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return true;
             }
             else if (result == DialogResult.No)
             {
+                list.RemoveAt(index);
                 return false;
             }
             else
                 return false;
         }
-        private bool SecondGame()
+        private bool SecondGame(List<int> list)
         {
+            int count = 0;
+            int left = 0;
+            int right = list.Count - 1;
+            while(left <= right)
+            {
+                int mid = left + (right - left) / 2;
+                var result = MessageBox.Show($"Ваше загаданное число {list[mid]}?",
+                $"попытка отгадать #{count}",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ++count;
+                    MessageBox.Show($"Ваше загаданное число {list[mid]} было отгадано за {count} попыток",
+                        "Число отгадано",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return true;
+                }
+                else if (result == DialogResult.No)
+                {
 
+                    
+                }
+                else
+                    return false;
+            }
+            return false;
+        }
+
+        private void buttonGame2_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxEnterNum.Text) || !int.TryParse(textBoxEnterNum.Text, out int inputUpNumSearch) || inputUpNumSearch <= 1)
+            {
+                MessageBox.Show("Произошла ошибка при выборе диапазона загадывания!\nЗагадываемый диапазон должен быть больше чем 1",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

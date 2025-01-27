@@ -36,9 +36,10 @@
             // 
             // buttonGame1
             // 
-            buttonGame1.Location = new Point(12, 77);
+            buttonGame1.Location = new Point(14, 103);
+            buttonGame1.Margin = new Padding(3, 4, 3, 4);
             buttonGame1.Name = "buttonGame1";
-            buttonGame1.Size = new Size(140, 23);
+            buttonGame1.Size = new Size(160, 31);
             buttonGame1.TabIndex = 0;
             buttonGame1.Text = "Обычная угадайка";
             buttonGame1.UseVisualStyleBackColor = true;
@@ -46,39 +47,43 @@
             // 
             // buttonGame2
             // 
-            buttonGame2.Location = new Point(195, 77);
+            buttonGame2.Location = new Point(223, 103);
+            buttonGame2.Margin = new Padding(3, 4, 3, 4);
             buttonGame2.Name = "buttonGame2";
-            buttonGame2.Size = new Size(140, 23);
+            buttonGame2.Size = new Size(160, 31);
             buttonGame2.TabIndex = 1;
             buttonGame2.Text = "Больше - Меньше";
             buttonGame2.UseVisualStyleBackColor = true;
+            buttonGame2.Click += buttonGame2_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 36);
+            label1.Location = new Point(14, 48);
             label1.Name = "label1";
-            label1.Size = new Size(260, 15);
+            label1.Size = new Size(335, 20);
             label1.TabIndex = 2;
             label1.Text = "В каком диапазоне будите загадывать: от 1 до ";
             // 
             // textBoxEnterNum
             // 
-            textBoxEnterNum.Location = new Point(278, 33);
+            textBoxEnterNum.Location = new Point(318, 44);
+            textBoxEnterNum.Margin = new Padding(3, 4, 3, 4);
             textBoxEnterNum.Name = "textBoxEnterNum";
-            textBoxEnterNum.Size = new Size(57, 23);
+            textBoxEnterNum.Size = new Size(65, 27);
             textBoxEnterNum.TabIndex = 3;
             textBoxEnterNum.KeyPress += textBoxEnterNum_KeyPress;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(347, 134);
+            ClientSize = new Size(397, 179);
             Controls.Add(textBoxEnterNum);
             Controls.Add(label1);
             Controls.Add(buttonGame2);
             Controls.Add(buttonGame1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Игра угадай число";
             ResumeLayout(false);
