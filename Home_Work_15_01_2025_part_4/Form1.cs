@@ -66,7 +66,6 @@ namespace Home_Work_15_01_2025_part_4
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return true;
-                return true;
             }
             Random random = new Random();
             index = random.Next(0, list.Count);
@@ -90,13 +89,14 @@ namespace Home_Work_15_01_2025_part_4
             else
                 return false;
         }
-        private bool SecondGame(List<int> list)
+        private void SecondGame(List<int> list)
         {
             int count = 0;
             int left = 0;
             int right = list.Count - 1;
             while(left <= right)
             {
+                ++count;
                 int mid = left + (right - left) / 2;
                 var result = MessageBox.Show($"Ваше загаданное число {list[mid]}?",
                 $"попытка отгадать #{count}",
@@ -104,22 +104,37 @@ namespace Home_Work_15_01_2025_part_4
                 MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    ++count;
                     MessageBox.Show($"Ваше загаданное число {list[mid]} было отгадано за {count} попыток",
                         "Число отгадано",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    return true;
+                    return;
                 }
                 else if (result == DialogResult.No)
                 {
-
-                    
+                    var numBigOrSmal = MessageBox.Show($"Загаданное число больше {list[mid]}?",
+                        "Больше / Меньше",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    if(numBigOrSmal == DialogResult.Yes)
+                    {
+                        left = mid + 1;
+                    }
+                    else if(numBigOrSmal == DialogResult.No)
+                    {
+                        right = mid - 1;
+                    }
+                    else
+                        return;
                 }
                 else
-                    return false;
+                    return;
             }
-            return false;
+            MessageBox.Show($"Вы явно забыли свое число или не загадали его, или вы давали противоречивые ответы",
+                            "Ошибка",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+            return;
         }
 
         private void buttonGame2_Click(object sender, EventArgs e)
@@ -132,6 +147,8 @@ namespace Home_Work_15_01_2025_part_4
                     MessageBoxIcon.Error);
                 return;
             }
+            List<int> numbers = Enumerable.Range(1, inputUpNumSearch).ToList();
+            SecondGame(numbers);
         }
     }
 }
