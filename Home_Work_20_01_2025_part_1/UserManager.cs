@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Home_Work_20_01_2025_part_1
 {
@@ -11,26 +13,29 @@ namespace Home_Work_20_01_2025_part_1
     public class UserManager
     {
         public List<User> Users = new List<User>();
-        string FilePath {  get; set; }
+        public string FilePath {  get; set; }
         // Методы для работы с User
         public void AddUser(User user) {  Users.Add(user); }
-        public void RemoveUser(User user) { Users.Remove(user); }
-        public void UpdateUser(User oldUser, User newUser)
-        {
-            // Написать реализацию
-        }
+        //public void RemoveUser(User user) { Users.Remove(user); }
+        //public void UpdateUser(User oldUser, User newUser)
+        //{
+        //    int index = Users.IndexOf(oldUser);
+        //    if (index != -1)
+        //    {
+        //        Users[index] = newUser;
+        //    }
+        //}
         public List<User> GetUsers() { return Users; }
         // Методы ипорта/экспорта
         public List<User> LoadUsersFromJson(string json) // обработка JSON формата в User
         {
-            // Переделать / Доделать реализацию
-            return Users;
+            List<User> users = JsonSerializer.Deserialize<List<User>>(json);
+            return users;
         }
         public string SaveUsersToJson() // Обработка User в формат JSON
         {
-            // Переделать / Доделать реализацию
-            string str = nameof(SaveUsersToJson);
-            return str;
+            string jsonStr = JsonSerializer.Serialize(Users);
+            return jsonStr;
         }
         public void ImportFromTxt(string FilePath)
         {

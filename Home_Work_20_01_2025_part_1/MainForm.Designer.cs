@@ -52,6 +52,7 @@
             buttonAddUser.TabIndex = 1;
             buttonAddUser.Text = "Добавить нового Пользователя";
             buttonAddUser.UseVisualStyleBackColor = true;
+            buttonAddUser.Click += buttonAddUser_Click;
             // 
             // buttonEditUser
             // 
@@ -61,7 +62,7 @@
             buttonEditUser.TabIndex = 2;
             buttonEditUser.Text = "Редактировать Пользователя";
             buttonEditUser.UseVisualStyleBackColor = true;
-            buttonEditUser.Click += this.buttonEditUser_Click;
+            buttonEditUser.Click += buttonEditUser_Click;
             // 
             // buttonDeleteUser
             // 
@@ -71,6 +72,7 @@
             buttonDeleteUser.TabIndex = 3;
             buttonDeleteUser.Text = "Удалить Пользователя";
             buttonDeleteUser.UseVisualStyleBackColor = true;
+            buttonDeleteUser.Click += buttonDeleteUser_Click;
             // 
             // buttonImportUser
             // 

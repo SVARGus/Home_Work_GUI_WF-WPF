@@ -23,7 +23,8 @@ namespace Home_Work_20_01_2025_part_1
 
         public override string ToString()
         {
-            return $"Имя: {FirstName}, Фамилия: {LastName}, Email: {Email}, Телефон: {Phone}.";
+            return $"{FirstName}, {LastName}, {Email}, {Phone}.";
+            //return $"Имя: {FirstName}, Фамилия: {LastName}, Email: {Email}, Телефон: {Phone}.";
         }
     }
 }

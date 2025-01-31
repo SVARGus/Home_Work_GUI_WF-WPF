@@ -119,6 +119,7 @@
             buttonSave.TabIndex = 9;
             buttonSave.Text = "Сохранить";
             buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
             // 
             // buttonCancel
             // 
@@ -128,6 +129,7 @@
             buttonCancel.TabIndex = 10;
             buttonCancel.Text = "Отмена";
             buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // UserForm
             // 
