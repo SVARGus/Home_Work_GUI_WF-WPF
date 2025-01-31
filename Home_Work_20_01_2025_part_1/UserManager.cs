@@ -37,19 +37,31 @@ namespace Home_Work_20_01_2025_part_1
             string jsonStr = JsonSerializer.Serialize(Users);
             return jsonStr;
         }
-        public void ImportFromTxt(string FilePath)
+        public void ImportFromTxt(string filePath = null)
         {
+            if (filePath == null)
+                filePath = FilePath;
             string strJson = SaveUsersToJson();
-            File.WriteAllText(FilePath, strJson);
+            File.WriteAllText(filePath, strJson);
+            MessageBox.Show("Данные успешно сохранены",
+                        "Save Users",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
         }
-        public void ExportToTxt(string FilePath)
+        public void ExportToTxt(string filePath = null)
         {
-            if (File.Exists(FilePath))
+            if (filePath == null)
+                filePath = FilePath;
+            if (File.Exists(filePath))
             {
                 try
                 {
-                    string strJson = File.ReadAllText(FilePath);
+                    string strJson = File.ReadAllText(filePath);
                     Users = LoadUsersFromJson(strJson);
+                    MessageBox.Show("Данные загружены",
+                        "Load Users",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
                 catch(Exception ex)
                 {
@@ -61,7 +73,7 @@ namespace Home_Work_20_01_2025_part_1
             }
             else
             {
-                MessageBox.Show($"Файл не найден по пути {FilePath}",
+                MessageBox.Show($"Файл не найден по пути {filePath}",
                     "Ошибка",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);

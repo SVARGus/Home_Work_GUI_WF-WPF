@@ -26,9 +26,9 @@ namespace Home_Work_20_01_2025_part_1
                 FilePath = "users.json",
                 Users = new List<User>
                 {
-                    new User("Иван", "Иванов", "ivanov@gmail.com", "+79261112233"),
-                    new User("Мария", "Петрова", "petrova@gmail.com", "+79262223344"),
-                    new User("Алексей", "Сидоров", "sidorov@gmail.com", "+79263334455")
+                    //new User("Иван", "Иванов", "ivanov@gmail.com", "+79261112233"),
+                    //new User("Мария", "Петрова", "petrova@gmail.com", "+79262223344"),
+                    //new User("Алексей", "Сидоров", "sidorov@gmail.com", "+79263334455")
                 }
             };
             UpdateListBox();
@@ -92,6 +92,18 @@ namespace Home_Work_20_01_2025_part_1
                 userManager.Users.RemoveAt(index);
                 UpdateListBox();
             }
+        }
+
+        private void buttonExportUser_Click(object sender, EventArgs e)
+        {
+            userManager.ImportFromTxt();
+        }
+
+        private void buttonImportUser_Click(object sender, EventArgs e)
+        {
+            userManager.Users.Clear();
+            userManager.ExportToTxt();
+            UpdateListBox();
         }
     }
 }

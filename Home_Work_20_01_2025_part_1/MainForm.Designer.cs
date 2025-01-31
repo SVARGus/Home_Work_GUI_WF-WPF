@@ -82,6 +82,7 @@
             buttonImportUser.TabIndex = 5;
             buttonImportUser.Text = "Загрузить данные";
             buttonImportUser.UseVisualStyleBackColor = true;
+            buttonImportUser.Click += buttonImportUser_Click;
             // 
             // buttonExportUser
             // 
@@ -91,6 +92,7 @@
             buttonExportUser.TabIndex = 4;
             buttonExportUser.Text = "Сохранить данные";
             buttonExportUser.UseVisualStyleBackColor = true;
+            buttonExportUser.Click += buttonExportUser_Click;
             // 
             // MainForm
             // 
