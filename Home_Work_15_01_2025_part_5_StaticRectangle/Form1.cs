@@ -23,6 +23,7 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
         private Point endPoint;
         private Panel previewPanel;
         private bool isDrawing = false;
+        private int panelCount = 1;
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +44,8 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
                     {
                         BorderStyle = BorderStyle.FixedSingle,
                         BackColor = Color.FromArgb(100, 59, 166, 241),
-                        Visible = false
+                        Visible = false,
+                        Name = "Panel" + panelCount
                     };
                     this.Controls.Add(previewPanel);
                 }
@@ -54,16 +56,38 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
         {
             if (isDrawing)
             {
+                int x = Math.Min(startPoint.X, endPoint.X);
+                int y = Math.Min(startPoint.Y, endPoint.Y);
+                int width = Math.Abs(startPoint.X - endPoint.X);
+                int heigh = Math.Abs(startPoint.Y - endPoint.Y);
                 isDrawing = false;
                 previewPanel.Visible = false;
-                Panel staticPanel = new Panel()
+                if (width >= 10 && heigh >= 10)
                 {
-                    Location = previewPanel.Location,
-                    Size = previewPanel.Size,
-                    BackColor = Color.FromArgb(59, 166, 241),
-                    BorderStyle = BorderStyle.FixedSingle
-                };
-                this.Controls.Add(staticPanel);
+                    Panel staticPanel = new Panel()
+                    {
+                        Location = previewPanel.Location,
+                        Size = previewPanel.Size,
+                        BackColor = Color.FromArgb(59, 166, 241),
+                        BorderStyle = BorderStyle.FixedSingle
+                    };
+                    Label label = new Label()
+                    {
+                        Text = panelCount.ToString(),
+                        AutoSize = true,
+                        Location = new Point(2, 2)
+                    };
+                    staticPanel.Controls.Add(label);
+                    this.Controls.Add(staticPanel);
+                    ++panelCount;
+                }
+                else
+                {
+                    MessageBox.Show("Размер статика не может быть меньше 10х10",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
         }
 
