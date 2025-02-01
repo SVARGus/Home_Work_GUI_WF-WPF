@@ -15,6 +15,8 @@
 если в точке щелчка находится несколько «статиков», то
 предпочтение отдается «статику» с наименьшим порядковым номером
 */
+using System.Windows.Forms;
+
 namespace Home_Work_15_01_2025_part_5_StaticRectangle
 {
     public partial class Form1 : Form
@@ -53,7 +55,7 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
         }
         private void Panel_MousDown(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 Panel clickedPanel = sender as Panel;
                 if (clickedPanel != null)
@@ -96,6 +98,7 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
                     };
                     staticPanel.Controls.Add(label);
                     staticPanel.MouseDown += Panel_MousDown; // Добавление события в статик
+                    staticPanel.DoubleClick += DeletePanel_DoubleClick;
                     this.Controls.Add(staticPanel);
                     ++panelCount;
                 }
@@ -121,6 +124,31 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
                 previewPanel.SetBounds(x, y, width, heigh);
                 previewPanel.Visible = true;
                 this.Controls.Add(previewPanel);
+            }
+        }
+
+
+        private void DeletePanel_DoubleClick(object sender, EventArgs e)
+        {
+            Point clickLocation = this.PointToClient(Cursor.Position);
+            List<Panel> panelList = new List<Panel>();
+            foreach(Control control in this.Controls)
+            {
+                if(control is Panel panel && panel.Bounds.Contains(clickLocation))
+                {
+                    panelList.Add(panel);
+                }
+            }
+            if (panelList.Count > 0)
+            {
+                Panel smallestPanel = panelList
+                .OrderBy(p => int.Parse(p.Name.Replace("Panel", "")))
+                .FirstOrDefault();
+                if (smallestPanel != null)
+                {
+                    this.Controls.Remove(smallestPanel);
+                    smallestPanel.Dispose();
+                }
             }
         }
     }
