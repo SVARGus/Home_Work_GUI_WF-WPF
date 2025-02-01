@@ -74,6 +74,7 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
         {
             if (isDrawing)
             {
+                endPoint = e.Location; // Теперь при ординарном нажатии на пустом поле, срабатывает предупреждение о размере статика, но зато panelCount не увеличивается
                 int x = Math.Min(startPoint.X, endPoint.X);
                 int y = Math.Min(startPoint.Y, endPoint.Y);
                 int width = Math.Abs(startPoint.X - endPoint.X);
@@ -100,7 +101,7 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
                     staticPanel.MouseDown += Panel_MousDown; // Добавление события в статик
                     staticPanel.DoubleClick += DeletePanel_DoubleClick;
                     this.Controls.Add(staticPanel);
-                    ++panelCount;
+                    ++panelCount; // При ординарном клике мышкой (без удержания) статик не создается, но panelCount увеличивается
                 }
                 else
                 {
@@ -123,7 +124,7 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
                 int heigh = Math.Abs(startPoint.Y - endPoint.Y);
                 previewPanel.SetBounds(x, y, width, heigh);
                 previewPanel.Visible = true;
-                this.Controls.Add(previewPanel);
+                this.Controls.Add(previewPanel); // Выскакивает исключение из-за события с двойным кликом или ординарным
             }
         }
 
