@@ -38,7 +38,7 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
             {
                 startPoint = e.Location;
                 isDrawing = true;
-                if(previewPanel == null)
+                if (previewPanel == null)
                 {
                     previewPanel = new Panel()
                     {
@@ -48,6 +48,22 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
                         Name = "Panel" + panelCount
                     };
                     this.Controls.Add(previewPanel);
+                }
+            }
+        }
+        private void Panel_MousDown(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                Panel clickedPanel = sender as Panel;
+                if (clickedPanel != null)
+                {
+                    int x = clickedPanel.Location.X;
+                    int y = clickedPanel.Location.Y;
+                    int width = clickedPanel.Width;
+                    int height = clickedPanel.Height;
+                    int area = width * height;
+                    this.Text = $"{clickedPanel.Name.ToString()} | Координаты ({x}:{y}) | Площадь {area}";
                 }
             }
         }
@@ -69,7 +85,8 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
                         Location = previewPanel.Location,
                         Size = previewPanel.Size,
                         BackColor = Color.FromArgb(59, 166, 241),
-                        BorderStyle = BorderStyle.FixedSingle
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Name = "Panel" + panelCount
                     };
                     Label label = new Label()
                     {
@@ -78,6 +95,7 @@ namespace Home_Work_15_01_2025_part_5_StaticRectangle
                         Location = new Point(2, 2)
                     };
                     staticPanel.Controls.Add(label);
+                    staticPanel.MouseDown += Panel_MousDown; // Добавление события в статик
                     this.Controls.Add(staticPanel);
                     ++panelCount;
                 }
