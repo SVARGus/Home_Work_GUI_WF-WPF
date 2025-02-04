@@ -36,7 +36,7 @@
             label1 = new Label();
             numericUpDownVolumeProducts = new NumericUpDown();
             buttonAddProductCash = new Button();
-            comboBox1 = new ComboBox();
+            comboBoxProductList = new ComboBox();
             buttonEnterStorage = new Button();
             buttonEndShiftCash = new Button();
             groupBoxCash.SuspendLayout();
@@ -52,10 +52,12 @@
             groupBoxCash.Controls.Add(label1);
             groupBoxCash.Controls.Add(numericUpDownVolumeProducts);
             groupBoxCash.Controls.Add(buttonAddProductCash);
-            groupBoxCash.Controls.Add(comboBox1);
-            groupBoxCash.Location = new Point(12, 12);
+            groupBoxCash.Controls.Add(comboBoxProductList);
+            groupBoxCash.Location = new Point(14, 16);
+            groupBoxCash.Margin = new Padding(3, 4, 3, 4);
             groupBoxCash.Name = "groupBoxCash";
-            groupBoxCash.Size = new Size(631, 380);
+            groupBoxCash.Padding = new Padding(3, 4, 3, 4);
+            groupBoxCash.Size = new Size(721, 507);
             groupBoxCash.TabIndex = 0;
             groupBoxCash.TabStop = false;
             groupBoxCash.Text = "Касса";
@@ -63,17 +65,19 @@
             // checkedListBoxProductsCash
             // 
             checkedListBoxProductsCash.FormattingEnabled = true;
-            checkedListBoxProductsCash.Location = new Point(23, 83);
+            checkedListBoxProductsCash.Location = new Point(26, 111);
+            checkedListBoxProductsCash.Margin = new Padding(3, 4, 3, 4);
             checkedListBoxProductsCash.Name = "checkedListBoxProductsCash";
-            checkedListBoxProductsCash.Size = new Size(579, 184);
+            checkedListBoxProductsCash.Size = new Size(661, 224);
             checkedListBoxProductsCash.TabIndex = 8;
+            checkedListBoxProductsCash.ItemCheck += checkedListBoxProductsCash_ItemCheck;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(572, 302);
+            label2.Location = new Point(654, 403);
             label2.Name = "label2";
-            label2.Size = new Size(30, 15);
+            label2.Size = new Size(37, 20);
             label2.TabIndex = 7;
             label2.Text = "руб.";
             // 
@@ -81,17 +85,18 @@
             // 
             labelSumCash.AutoSize = true;
             labelSumCash.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            labelSumCash.Location = new Point(515, 289);
+            labelSumCash.Location = new Point(589, 385);
             labelSumCash.Name = "labelSumCash";
-            labelSumCash.Size = new Size(41, 28);
+            labelSumCash.Size = new Size(50, 35);
             labelSumCash.TabIndex = 6;
             labelSumCash.Text = "0,0";
             // 
             // buttonEnterReceipt
             // 
-            buttonEnterReceipt.Location = new Point(198, 333);
+            buttonEnterReceipt.Location = new Point(226, 444);
+            buttonEnterReceipt.Margin = new Padding(3, 4, 3, 4);
             buttonEnterReceipt.Name = "buttonEnterReceipt";
-            buttonEnterReceipt.Size = new Size(218, 23);
+            buttonEnterReceipt.Size = new Size(249, 31);
             buttonEnterReceipt.TabIndex = 5;
             buttonEnterReceipt.Text = "Выдать чек";
             buttonEnterReceipt.UseVisualStyleBackColor = true;
@@ -100,43 +105,49 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(562, 26);
+            label1.Location = new Point(661, 36);
             label1.Name = "label1";
-            label1.Size = new Size(18, 15);
+            label1.Size = new Size(30, 20);
             label1.TabIndex = 4;
-            label1.Text = "кг";
+            label1.Text = "шт.";
             // 
             // numericUpDownVolumeProducts
             // 
-            numericUpDownVolumeProducts.Location = new Point(428, 22);
+            numericUpDownVolumeProducts.Location = new Point(508, 29);
+            numericUpDownVolumeProducts.Margin = new Padding(3, 4, 3, 4);
+            numericUpDownVolumeProducts.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownVolumeProducts.Name = "numericUpDownVolumeProducts";
-            numericUpDownVolumeProducts.Size = new Size(128, 23);
+            numericUpDownVolumeProducts.Size = new Size(146, 27);
             numericUpDownVolumeProducts.TabIndex = 3;
             numericUpDownVolumeProducts.TextAlign = HorizontalAlignment.Center;
             // 
             // buttonAddProductCash
             // 
-            buttonAddProductCash.Location = new Point(198, 52);
+            buttonAddProductCash.Location = new Point(226, 69);
+            buttonAddProductCash.Margin = new Padding(3, 4, 3, 4);
             buttonAddProductCash.Name = "buttonAddProductCash";
-            buttonAddProductCash.Size = new Size(218, 23);
+            buttonAddProductCash.Size = new Size(249, 31);
             buttonAddProductCash.TabIndex = 2;
             buttonAddProductCash.Text = "Добавить";
             buttonAddProductCash.UseVisualStyleBackColor = true;
             buttonAddProductCash.Click += buttonAddProductCash_Click;
             // 
-            // comboBox1
+            // comboBoxProductList
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(23, 22);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(359, 23);
-            comboBox1.TabIndex = 0;
+            comboBoxProductList.FormattingEnabled = true;
+            comboBoxProductList.Location = new Point(26, 29);
+            comboBoxProductList.Margin = new Padding(3, 4, 3, 4);
+            comboBoxProductList.Name = "comboBoxProductList";
+            comboBoxProductList.RightToLeft = RightToLeft.No;
+            comboBoxProductList.Size = new Size(476, 28);
+            comboBoxProductList.TabIndex = 0;
             // 
             // buttonEnterStorage
             // 
-            buttonEnterStorage.Location = new Point(12, 406);
+            buttonEnterStorage.Location = new Point(14, 541);
+            buttonEnterStorage.Margin = new Padding(3, 4, 3, 4);
             buttonEnterStorage.Name = "buttonEnterStorage";
-            buttonEnterStorage.Size = new Size(186, 32);
+            buttonEnterStorage.Size = new Size(213, 43);
             buttonEnterStorage.TabIndex = 1;
             buttonEnterStorage.Text = "Склад";
             buttonEnterStorage.UseVisualStyleBackColor = true;
@@ -145,21 +156,23 @@
             // buttonEndShiftCash
             // 
             buttonEndShiftCash.BackColor = Color.IndianRed;
-            buttonEndShiftCash.Location = new Point(457, 406);
+            buttonEndShiftCash.Location = new Point(522, 541);
+            buttonEndShiftCash.Margin = new Padding(3, 4, 3, 4);
             buttonEndShiftCash.Name = "buttonEndShiftCash";
-            buttonEndShiftCash.Size = new Size(186, 32);
+            buttonEndShiftCash.Size = new Size(213, 43);
             buttonEndShiftCash.TabIndex = 2;
             buttonEndShiftCash.Text = "Закончить смену";
             buttonEndShiftCash.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(664, 450);
+            ClientSize = new Size(759, 600);
             Controls.Add(buttonEndShiftCash);
             Controls.Add(buttonEnterStorage);
             Controls.Add(groupBoxCash);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
             Text = "MainForm";
             groupBoxCash.ResumeLayout(false);
@@ -172,7 +185,7 @@
 
         private GroupBox groupBoxCash;
         private Button buttonAddProductCash;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxProductList;
         private Button buttonEnterReceipt;
         private Label label1;
         private NumericUpDown numericUpDownVolumeProducts;

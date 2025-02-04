@@ -10,10 +10,10 @@ namespace CandyMuseum
     {
         public string Name { get; set; }
         public string Producer {  get; set; }
-        public decimal Volume { get; set; }
-        public decimal Price { get; set; }
+        public int Volume { get; set; }
+        public double Price { get; set; }
         public Product() { }
-        public Product (string name, string producer, decimal volume, decimal price)
+        public Product (string name, string producer, int volume, double price)
         {
             this.Name = name;
             this.Producer = producer;
@@ -22,7 +22,7 @@ namespace CandyMuseum
         }
         public override string ToString()
         {
-            return $"{Name} Производитель: {Producer}, Цена: {Price} руб. - {Volume} кг.";
+            return $"{Name} Производитель: {Producer}, Цена: {Price} руб. - {Volume} шт.";
         }
     }
 }
