@@ -48,15 +48,23 @@ namespace CandyMuseum
 
         private void buttonSaveProduct_Click(object sender, EventArgs e)
         {
-            string producer = "";
-            if (radioButtonProducer1.Checked = true)
+            string producer = null;
+            if (radioButtonProducer1.Checked == true)
                 producer = radioButtonProducer1.Text;
-            if (radioButtonProducer2.Checked = true)
+            if (radioButtonProducer2.Checked == true)
                 producer = radioButtonProducer2.Text;
-            if (radioButtonProducer3.Checked = true)
+            if (radioButtonProducer3.Checked == true)
                 producer = radioButtonProducer3.Text;
-            if (radioButtonProducer4.Checked = true)
+            if (radioButtonProducer4.Checked == true)
                 producer = radioButtonProducer4.Text;
+            if(producer == null)
+            {
+                MessageBox.Show("Выберите производителя",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
             productDate = new Product(textBoxNameProduct.Text, producer, (int)numericUpDownQuzntityProduct.Value, (double)numericUpDownPriceProduct.Value);
             this.DialogResult = DialogResult.OK;
             this.Close();

@@ -3,10 +3,21 @@ namespace CandyMuseum
     public partial class MainForm : Form
     {
         private List<OrderItem> dailyReceipt = new List<OrderItem>();
+        private ToolTip toolTip;
         public MainForm()
         {
             InitializeComponent();
             UpdateProductList();
+            toolTip = new ToolTip();
+            toolTip.AutoPopDelay = 2000;
+            toolTip.InitialDelay = 500;
+            toolTip.ReshowDelay = 500;
+            toolTip.ShowAlways = true;
+            toolTip.SetToolTip(comboBoxProductList, "Выберите товар");
+            toolTip.SetToolTip(numericUpDownVolumeProducts, "Количество товара");
+            toolTip.SetToolTip(buttonEnterReceipt, "Расчитаться с покупателем");
+            toolTip.SetToolTip(buttonEnterStorage, "Вход только для админа");
+            toolTip.SetToolTip(buttonEndShiftCash, "Завершить рабочиф день?");
         }
         private void UpdateProductList()
         {

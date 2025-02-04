@@ -35,18 +35,25 @@ namespace CandyMuseum
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
             ProductCardForm productCardForm = new ProductCardForm();
-            productCardForm.ShowDialog(this);
-            if (this.DialogResult == DialogResult.OK)
+            if (productCardForm.ShowDialog(this) == DialogResult.OK)
             {
+                Storage.PushBackProduct(productCardForm.productDate);
                 UpdateListBox();
             }
         }
 
         private void buttonModifyProduct_Click(object sender, EventArgs e)
         {
+            if(listBoxStorage.SelectedItems == null)
+            {
+                MessageBox.Show("Вы не выбрали товар для изменения",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
             ProductCardForm productCardForm = new ProductCardForm((Product)listBoxStorage.SelectedItem);
-            productCardForm.ShowDialog(this);
-            if (this.DialogResult == DialogResult.OK)
+            if (productCardForm.ShowDialog(this) == DialogResult.OK)
             {
                 var product = Storage.GetListProducts();
                 int index = listBoxStorage.SelectedIndex;
@@ -57,6 +64,14 @@ namespace CandyMuseum
 
         private void buttonRemoveProduct_Click(object sender, EventArgs e)
         {
+            if (listBoxStorage.SelectedItems == null)
+            {
+                MessageBox.Show("Вы не выбрали товар для удаления",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
             Storage.Delete(listBoxStorage.SelectedIndex);
             UpdateListBox();
         }

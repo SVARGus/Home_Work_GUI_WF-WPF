@@ -18,5 +18,7 @@ namespace CandyMuseum
         { return _products; }
         public static void Delete(int index)
         { _products.RemoveAt(index); }
+        public static void PushBackProduct(Product product)
+        { _products.Add(product); }
     }
 }
