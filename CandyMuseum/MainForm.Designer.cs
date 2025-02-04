@@ -83,13 +83,13 @@
             // 
             // labelSumCash
             // 
-            labelSumCash.AutoSize = true;
             labelSumCash.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            labelSumCash.Location = new Point(589, 385);
+            labelSumCash.Location = new Point(508, 385);
             labelSumCash.Name = "labelSumCash";
-            labelSumCash.Size = new Size(50, 35);
+            labelSumCash.Size = new Size(131, 35);
             labelSumCash.TabIndex = 6;
             labelSumCash.Text = "0,0";
+            labelSumCash.TextAlign = ContentAlignment.MiddleRight;
             // 
             // buttonEnterReceipt
             // 
@@ -163,6 +163,7 @@
             buttonEndShiftCash.TabIndex = 2;
             buttonEndShiftCash.Text = "Закончить смену";
             buttonEndShiftCash.UseVisualStyleBackColor = false;
+            buttonEndShiftCash.Click += buttonEndShiftCash_Click;
             // 
             // MainForm
             // 

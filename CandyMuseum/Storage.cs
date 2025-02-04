@@ -16,5 +16,7 @@ namespace CandyMuseum
         };
         public static List<Product> GetListProducts()
         { return _products; }
+        public static void Delete(int index)
+        { _products.RemoveAt(index); }
     }
 }

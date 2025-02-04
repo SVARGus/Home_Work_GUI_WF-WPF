@@ -36,10 +36,10 @@
             // 
             // buttonEnterStorage
             // 
-            buttonEnterStorage.Location = new Point(136, 213);
-            buttonEnterStorage.Margin = new Padding(4, 5, 4, 5);
+            buttonEnterStorage.Location = new Point(109, 170);
+            buttonEnterStorage.Margin = new Padding(3, 4, 3, 4);
             buttonEnterStorage.Name = "buttonEnterStorage";
-            buttonEnterStorage.Size = new Size(107, 38);
+            buttonEnterStorage.Size = new Size(86, 30);
             buttonEnterStorage.TabIndex = 0;
             buttonEnterStorage.Text = "Войти";
             buttonEnterStorage.UseVisualStyleBackColor = true;
@@ -48,40 +48,41 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(26, 38);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(21, 30);
             label1.Name = "label1";
-            label1.Size = new Size(348, 25);
+            label1.Size = new Size(298, 20);
             label1.TabIndex = 1;
             label1.Text = "Введите логин и пароль администратора";
             // 
             // textBoxLogin
             // 
-            textBoxLogin.Location = new Point(26, 85);
-            textBoxLogin.Margin = new Padding(4, 5, 4, 5);
+            textBoxLogin.Location = new Point(21, 68);
+            textBoxLogin.Margin = new Padding(3, 4, 3, 4);
             textBoxLogin.Name = "textBoxLogin";
-            textBoxLogin.Size = new Size(331, 31);
+            textBoxLogin.Size = new Size(266, 27);
             textBoxLogin.TabIndex = 2;
+            textBoxLogin.Text = "admin";
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(26, 148);
-            textBoxPassword.Margin = new Padding(4, 5, 4, 5);
+            textBoxPassword.Location = new Point(21, 118);
+            textBoxPassword.Margin = new Padding(3, 4, 3, 4);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '*';
-            textBoxPassword.Size = new Size(331, 31);
+            textBoxPassword.Size = new Size(266, 27);
             textBoxPassword.TabIndex = 3;
+            textBoxPassword.Text = "12345";
             // 
             // LogInForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(381, 280);
+            ClientSize = new Size(305, 224);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxLogin);
             Controls.Add(label1);
             Controls.Add(buttonEnterStorage);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LogInForm";
             Text = "LogInForm";
             ResumeLayout(false);

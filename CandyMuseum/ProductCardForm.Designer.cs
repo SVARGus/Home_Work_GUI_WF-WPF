@@ -31,10 +31,10 @@
             label1 = new Label();
             textBoxNameProduct = new TextBox();
             groupBoxListProducer = new GroupBox();
-            radioButtonProducer1 = new RadioButton();
-            radioButtonProducer2 = new RadioButton();
             radioButtonProducer4 = new RadioButton();
             radioButtonProducer3 = new RadioButton();
+            radioButtonProducer2 = new RadioButton();
+            radioButtonProducer1 = new RadioButton();
             label2 = new Label();
             label3 = new Label();
             numericUpDownQuzntityProduct = new NumericUpDown();
@@ -49,17 +49,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 22);
+            label1.Location = new Point(14, 29);
             label1.Name = "label1";
-            label1.Size = new Size(105, 15);
+            label1.Size = new Size(137, 20);
             label1.TabIndex = 0;
             label1.Text = "  Название товара";
             // 
             // textBoxNameProduct
             // 
-            textBoxNameProduct.Location = new Point(12, 49);
+            textBoxNameProduct.Location = new Point(14, 65);
+            textBoxNameProduct.Margin = new Padding(3, 4, 3, 4);
             textBoxNameProduct.Name = "textBoxNameProduct";
-            textBoxNameProduct.Size = new Size(307, 23);
+            textBoxNameProduct.Size = new Size(350, 27);
             textBoxNameProduct.TabIndex = 1;
             // 
             // groupBoxListProducer
@@ -68,41 +69,22 @@
             groupBoxListProducer.Controls.Add(radioButtonProducer3);
             groupBoxListProducer.Controls.Add(radioButtonProducer2);
             groupBoxListProducer.Controls.Add(radioButtonProducer1);
-            groupBoxListProducer.Location = new Point(12, 78);
+            groupBoxListProducer.Location = new Point(14, 104);
+            groupBoxListProducer.Margin = new Padding(3, 4, 3, 4);
             groupBoxListProducer.Name = "groupBoxListProducer";
-            groupBoxListProducer.Size = new Size(307, 81);
+            groupBoxListProducer.Padding = new Padding(3, 4, 3, 4);
+            groupBoxListProducer.Size = new Size(351, 108);
             groupBoxListProducer.TabIndex = 2;
             groupBoxListProducer.TabStop = false;
             groupBoxListProducer.Text = "Производитель";
             // 
-            // radioButtonProducer1
-            // 
-            radioButtonProducer1.AutoSize = true;
-            radioButtonProducer1.Location = new Point(6, 22);
-            radioButtonProducer1.Name = "radioButtonProducer1";
-            radioButtonProducer1.Size = new Size(82, 19);
-            radioButtonProducer1.TabIndex = 0;
-            radioButtonProducer1.TabStop = true;
-            radioButtonProducer1.Text = "Конти-Рус";
-            radioButtonProducer1.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonProducer2
-            // 
-            radioButtonProducer2.AutoSize = true;
-            radioButtonProducer2.Location = new Point(6, 47);
-            radioButtonProducer2.Name = "radioButtonProducer2";
-            radioButtonProducer2.Size = new Size(76, 19);
-            radioButtonProducer2.TabIndex = 1;
-            radioButtonProducer2.TabStop = true;
-            radioButtonProducer2.Text = "Крупская";
-            radioButtonProducer2.UseVisualStyleBackColor = true;
-            // 
             // radioButtonProducer4
             // 
             radioButtonProducer4.AutoSize = true;
-            radioButtonProducer4.Location = new Point(147, 47);
+            radioButtonProducer4.Location = new Point(168, 63);
+            radioButtonProducer4.Margin = new Padding(3, 4, 3, 4);
             radioButtonProducer4.Name = "radioButtonProducer4";
-            radioButtonProducer4.Size = new Size(91, 19);
+            radioButtonProducer4.Size = new Size(112, 24);
             radioButtonProducer4.TabIndex = 3;
             radioButtonProducer4.TabStop = true;
             radioButtonProducer4.Text = "Славяночка";
@@ -111,74 +93,104 @@
             // radioButtonProducer3
             // 
             radioButtonProducer3.AutoSize = true;
-            radioButtonProducer3.Location = new Point(147, 22);
+            radioButtonProducer3.Location = new Point(168, 29);
+            radioButtonProducer3.Margin = new Padding(3, 4, 3, 4);
             radioButtonProducer3.Name = "radioButtonProducer3";
-            radioButtonProducer3.Size = new Size(121, 19);
+            radioButtonProducer3.Size = new Size(152, 24);
             radioButtonProducer3.TabIndex = 2;
             radioButtonProducer3.TabStop = true;
             radioButtonProducer3.Text = "Красный октябрь";
             radioButtonProducer3.UseVisualStyleBackColor = true;
             // 
+            // radioButtonProducer2
+            // 
+            radioButtonProducer2.AutoSize = true;
+            radioButtonProducer2.Location = new Point(7, 63);
+            radioButtonProducer2.Margin = new Padding(3, 4, 3, 4);
+            radioButtonProducer2.Name = "radioButtonProducer2";
+            radioButtonProducer2.Size = new Size(94, 24);
+            radioButtonProducer2.TabIndex = 1;
+            radioButtonProducer2.TabStop = true;
+            radioButtonProducer2.Text = "Крупская";
+            radioButtonProducer2.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonProducer1
+            // 
+            radioButtonProducer1.AutoSize = true;
+            radioButtonProducer1.Location = new Point(7, 29);
+            radioButtonProducer1.Margin = new Padding(3, 4, 3, 4);
+            radioButtonProducer1.Name = "radioButtonProducer1";
+            radioButtonProducer1.Size = new Size(100, 24);
+            radioButtonProducer1.TabIndex = 0;
+            radioButtonProducer1.TabStop = true;
+            radioButtonProducer1.Text = "Конти-Рус";
+            radioButtonProducer1.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 174);
+            label2.Location = new Point(14, 232);
             label2.Name = "label2";
-            label2.Size = new Size(128, 15);
+            label2.Size = new Size(161, 20);
             label2.TabIndex = 3;
             label2.Text = "Количество на складе";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 205);
+            label3.Location = new Point(14, 273);
             label3.Name = "label3";
-            label3.Size = new Size(89, 15);
+            label3.Size = new Size(115, 20);
             label3.TabIndex = 4;
-            label3.Text = "Стоимость (кг)";
+            label3.Text = "Стоимость (шт)";
             // 
             // numericUpDownQuzntityProduct
             // 
-            numericUpDownQuzntityProduct.DecimalPlaces = 3;
-            numericUpDownQuzntityProduct.Increment = new decimal(new int[] { 0, 0, 0, 196608 });
-            numericUpDownQuzntityProduct.Location = new Point(199, 172);
+            numericUpDownQuzntityProduct.Location = new Point(227, 229);
+            numericUpDownQuzntityProduct.Margin = new Padding(3, 4, 3, 4);
+            numericUpDownQuzntityProduct.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDownQuzntityProduct.Name = "numericUpDownQuzntityProduct";
-            numericUpDownQuzntityProduct.Size = new Size(120, 23);
+            numericUpDownQuzntityProduct.Size = new Size(137, 27);
             numericUpDownQuzntityProduct.TabIndex = 5;
             // 
             // numericUpDownPriceProduct
             // 
             numericUpDownPriceProduct.DecimalPlaces = 2;
             numericUpDownPriceProduct.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
-            numericUpDownPriceProduct.Location = new Point(199, 203);
+            numericUpDownPriceProduct.Location = new Point(227, 271);
+            numericUpDownPriceProduct.Margin = new Padding(3, 4, 3, 4);
             numericUpDownPriceProduct.Name = "numericUpDownPriceProduct";
-            numericUpDownPriceProduct.Size = new Size(120, 23);
+            numericUpDownPriceProduct.Size = new Size(137, 27);
             numericUpDownPriceProduct.TabIndex = 6;
             numericUpDownPriceProduct.ValueChanged += numericUpDown2_ValueChanged;
             // 
             // buttonSaveProduct
             // 
-            buttonSaveProduct.Location = new Point(12, 245);
+            buttonSaveProduct.Location = new Point(14, 327);
+            buttonSaveProduct.Margin = new Padding(3, 4, 3, 4);
             buttonSaveProduct.Name = "buttonSaveProduct";
-            buttonSaveProduct.Size = new Size(307, 23);
+            buttonSaveProduct.Size = new Size(351, 31);
             buttonSaveProduct.TabIndex = 7;
             buttonSaveProduct.Text = "Сохранить";
             buttonSaveProduct.UseVisualStyleBackColor = true;
+            buttonSaveProduct.Click += buttonSaveProduct_Click;
             // 
             // buttonBackProduct
             // 
-            buttonBackProduct.Location = new Point(12, 274);
+            buttonBackProduct.Location = new Point(14, 365);
+            buttonBackProduct.Margin = new Padding(3, 4, 3, 4);
             buttonBackProduct.Name = "buttonBackProduct";
-            buttonBackProduct.Size = new Size(307, 23);
+            buttonBackProduct.Size = new Size(351, 31);
             buttonBackProduct.TabIndex = 8;
             buttonBackProduct.Text = "Отменить";
             buttonBackProduct.UseVisualStyleBackColor = true;
+            buttonBackProduct.Click += buttonBackProduct_Click;
             // 
             // ProductCardForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(340, 314);
+            ClientSize = new Size(389, 419);
             Controls.Add(buttonBackProduct);
             Controls.Add(buttonSaveProduct);
             Controls.Add(numericUpDownPriceProduct);
@@ -188,6 +200,7 @@
             Controls.Add(groupBoxListProducer);
             Controls.Add(textBoxNameProduct);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ProductCardForm";
             Text = "ProductCardForm";
             groupBoxListProducer.ResumeLayout(false);

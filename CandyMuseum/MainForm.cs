@@ -12,6 +12,9 @@ namespace CandyMuseum
         {
             comboBoxProductList.DataSource = null;
             comboBoxProductList.DataSource = Storage.GetListProducts();
+            checkedListBoxProductsCash.Items.Clear();
+            labelSumCash.Text = "0,00";
+            numericUpDownVolumeProducts.Value = numericUpDownVolumeProducts.Minimum;
         }
         private void buttonAddProductCash_Click(object sender, EventArgs e)
         {
@@ -40,9 +43,9 @@ namespace CandyMuseum
         private void buttonEnterReceipt_Click(object sender, EventArgs e)
         {
             List<OrderItem> itemToRemove = new List<OrderItem>();
-            foreach(var item in checkedListBoxProductsCash.CheckedItems) // Добавляем в итоговый чек все выбранные товары перед првоеркой
+            foreach (var item in checkedListBoxProductsCash.CheckedItems) // Добавляем в итоговый чек все выбранные товары перед првоеркой
             {
-                if(item is OrderItem orderItem)
+                if (item is OrderItem orderItem)
                 {
                     var existingItem = itemToRemove.FirstOrDefault(x => x.Product == orderItem.Product);
                     if (existingItem != null)
@@ -53,12 +56,12 @@ namespace CandyMuseum
             }
             foreach (var item in itemToRemove) // Проверяем чтобы небыло выбрано к продаже количество больше чем имеется на складе
             {
-                if(item.Quantity > item.Product.Volume)
+                if (item.Quantity > item.Product.Volume)
                 {
-                    MessageBox.Show("Недостаточно товара на складе", 
+                    MessageBox.Show("Недостаточно товара на складе",
                         "Ошибка",
-                        MessageBoxButtons.OK, 
-                        MessageBoxIcon.Error); 
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -73,7 +76,6 @@ namespace CandyMuseum
                 dailyReceipt.Add(item);
             }
             cashReceip += $"Итого: {sum.ToString("F2")} руб.";
-            checkedListBoxProductsCash.Items.Clear();
             UpdateProductList();
             MessageBox.Show(cashReceip,
                 "Итоговый чек",
@@ -87,6 +89,7 @@ namespace CandyMuseum
             if (logInForm.ShowDialog() == DialogResult.Cancel)
             {
                 this.Visible = true;
+                UpdateProductList();
             }
         }
 
@@ -108,6 +111,36 @@ namespace CandyMuseum
                 }
             }
             labelSumCash.Text = sum.ToString("F2");
+        }
+
+        private void buttonEndShiftCash_Click(object sender, EventArgs e)
+        {
+            string closeCashierShift = "Сводный чек смены\n\n";
+            var groupedOrder = dailyReceipt // Группировка данных по Имени товара, производителю и цене продажи
+                .GroupBy(o => new { o.Product.Name, o.Product.Producer, o.PriceAtPurchase })
+                .Select(g => new
+                {
+                    Name = g.Key.Name,
+                    Producer = g.Key.Producer,
+                    PriceAtPurchase = g.Key.PriceAtPurchase,
+                    Quantity = g.Sum(o => o.Quantity),
+                    TotalSumPrice = g.Sum(o => o.Quantity * o.PriceAtPurchase)
+                })
+                .ToList();
+            double totalSum = 0;
+            foreach (var item in groupedOrder)
+            {
+                closeCashierShift += $"{item.Name} - цена продажи: {item.PriceAtPurchase.ToString("F2")} руб., " +
+                    $"количество - {item.Quantity} шт., сумма {item.TotalSumPrice.ToString("F2")} руб.\n";
+                totalSum += item.TotalSumPrice;
+            }
+            closeCashierShift += $"\nИтоговая выручка за смену: {totalSum.ToString("F2")} руб.";
+            MessageBox.Show(closeCashierShift,
+                "Конец смены",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            this.Close();
+            //UpdateProductList();
         }
     }
 }

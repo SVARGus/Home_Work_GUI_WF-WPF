@@ -38,58 +38,67 @@
             // listBoxStorage
             // 
             listBoxStorage.FormattingEnabled = true;
-            listBoxStorage.ItemHeight = 15;
-            listBoxStorage.Location = new Point(12, 16);
+            listBoxStorage.Location = new Point(14, 21);
+            listBoxStorage.Margin = new Padding(3, 4, 3, 4);
             listBoxStorage.Name = "listBoxStorage";
-            listBoxStorage.Size = new Size(377, 304);
+            listBoxStorage.Size = new Size(430, 404);
             listBoxStorage.TabIndex = 0;
             // 
             // buttonRemoveProduct
             // 
-            buttonRemoveProduct.Location = new Point(12, 386);
+            buttonRemoveProduct.Location = new Point(14, 515);
+            buttonRemoveProduct.Margin = new Padding(3, 4, 3, 4);
             buttonRemoveProduct.Name = "buttonRemoveProduct";
-            buttonRemoveProduct.Size = new Size(377, 23);
+            buttonRemoveProduct.Size = new Size(431, 31);
             buttonRemoveProduct.TabIndex = 1;
             buttonRemoveProduct.Text = "Удалить товар";
             buttonRemoveProduct.UseVisualStyleBackColor = true;
+            buttonRemoveProduct.Click += buttonRemoveProduct_Click;
             // 
             // buttonBack
             // 
-            buttonBack.Location = new Point(12, 415);
+            buttonBack.Location = new Point(14, 553);
+            buttonBack.Margin = new Padding(3, 4, 3, 4);
             buttonBack.Name = "buttonBack";
-            buttonBack.Size = new Size(377, 23);
+            buttonBack.Size = new Size(431, 31);
             buttonBack.TabIndex = 2;
             buttonBack.Text = "Вернуться";
             buttonBack.UseVisualStyleBackColor = true;
+            buttonBack.Click += buttonBack_Click;
             // 
             // buttonModifyProduct
             // 
-            buttonModifyProduct.Location = new Point(12, 357);
+            buttonModifyProduct.Location = new Point(14, 476);
+            buttonModifyProduct.Margin = new Padding(3, 4, 3, 4);
             buttonModifyProduct.Name = "buttonModifyProduct";
-            buttonModifyProduct.Size = new Size(377, 23);
+            buttonModifyProduct.Size = new Size(431, 31);
             buttonModifyProduct.TabIndex = 3;
             buttonModifyProduct.Text = "Изменить товар";
             buttonModifyProduct.UseVisualStyleBackColor = true;
+            buttonModifyProduct.Click += buttonModifyProduct_Click;
             // 
             // buttonAddProduct
             // 
-            buttonAddProduct.Location = new Point(12, 328);
+            buttonAddProduct.Location = new Point(14, 437);
+            buttonAddProduct.Margin = new Padding(3, 4, 3, 4);
             buttonAddProduct.Name = "buttonAddProduct";
-            buttonAddProduct.Size = new Size(377, 23);
+            buttonAddProduct.Size = new Size(431, 31);
             buttonAddProduct.TabIndex = 4;
             buttonAddProduct.Text = "Добавить товар";
             buttonAddProduct.UseVisualStyleBackColor = true;
+            buttonAddProduct.Click += buttonAddProduct_Click;
             // 
             // StorageForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(401, 450);
+            ClientSize = new Size(458, 600);
             Controls.Add(buttonAddProduct);
             Controls.Add(buttonModifyProduct);
             Controls.Add(buttonBack);
             Controls.Add(buttonRemoveProduct);
             Controls.Add(listBoxStorage);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "StorageForm";
             Text = "Товары";
             ResumeLayout(false);
