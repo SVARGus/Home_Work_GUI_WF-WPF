@@ -67,8 +67,8 @@ namespace Class_Work_31_01_2025_Library
                 {
                     int index = accountListBox.SelectedIndex;
                     var AccountArray = UserResurs.GetListUsers();
-                    AccountArray[index] = FormUserProfile.
-                    UpdateListBox();
+                    //AccountArray[index] = FormUserProfile.
+                    //UpdateListBox();
                 }
             }
         }

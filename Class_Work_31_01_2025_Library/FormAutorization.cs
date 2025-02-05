@@ -8,6 +8,7 @@ namespace Class_Work_31_01_2025_Library
         public FormAutorization()
         {
             InitializeComponent();
+
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -22,8 +23,8 @@ namespace Class_Work_31_01_2025_Library
             }
             else
             {
-                var AccountArray = UserResurs.GetListUsers().ToArray();
-                for (int i = 0; i < AccountArray.Length; i++)
+                var AccountArray = UserResurs.GetListUsers().ToList();
+                for (int i = 0; i < AccountArray.Count; i++)
                 {
                     if(AccountArray[i].Email == textBoxLogin.Text && AccountArray[i].Password == textBoxPassword.Text)
                     {

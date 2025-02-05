@@ -1,170 +1,170 @@
-// Набор пользователей для тестирования
+п»ї// РќР°Р±РѕСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РґР»СЏ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ
 [
   {
-    "Email": "admin@library.com",
-    "Password": "admin123",
-    "FirstName": "Иван",
-    "LastName": "Иванов",
+    "Email": "admin", //"admin@library.com",
+    "Password": "12345", //"admin123",
+    "FirstName": "РРІР°РЅ",
+    "LastName": "РРІР°РЅРѕРІ",
     "Phone": "+7 (900) 123-45-67",
     "Role": "Admin"
   },
   {
     "Email": "employee1@library.com",
     "Password": "emp123",
-    "FirstName": "Анна",
-    "LastName": "Петрова",
+    "FirstName": "РђРЅРЅР°",
+    "LastName": "РџРµС‚СЂРѕРІР°",
     "Phone": "+7 (900) 234-56-78",
     "Role": "Employee"
   },
   {
     "Email": "employee2@library.com",
     "Password": "emp123",
-    "FirstName": "Сергей",
-    "LastName": "Сидоров",
+    "FirstName": "РЎРµСЂРіРµР№",
+    "LastName": "РЎРёРґРѕСЂРѕРІ",
     "Phone": "+7 (900) 345-67-89",
     "Role": "Employee"
   },
   {
     "Email": "employee3@library.com",
     "Password": "emp123",
-    "FirstName": "Ольга",
-    "LastName": "Кузнецова",
+    "FirstName": "РћР»СЊРіР°",
+    "LastName": "РљСѓР·РЅРµС†РѕРІР°",
     "Phone": "+7 (900) 456-78-90",
     "Role": "Employee"
   },
   {
     "Email": "employee4@library.com",
     "Password": "emp123",
-    "FirstName": "Дмитрий",
-    "LastName": "Васильев",
+    "FirstName": "Р”РјРёС‚СЂРёР№",
+    "LastName": "Р’Р°СЃРёР»СЊРµРІ",
     "Phone": "+7 (900) 567-89-01",
     "Role": "Employee"
   },
   {
     "Email": "employee5@library.com",
     "Password": "emp123",
-    "FirstName": "Екатерина",
-    "LastName": "Михайлова",
+    "FirstName": "Р•РєР°С‚РµСЂРёРЅР°",
+    "LastName": "РњРёС…Р°Р№Р»РѕРІР°",
     "Phone": "+7 (900) 678-90-12",
     "Role": "Employee"
   },
   {
     "Email": "visitor1@library.com",
     "Password": "vis123",
-    "FirstName": "Алексей",
-    "LastName": "Смирнов",
+    "FirstName": "РђР»РµРєСЃРµР№",
+    "LastName": "РЎРјРёСЂРЅРѕРІ",
     "Phone": "+7 (900) 789-01-23",
     "Role": "Visitor"
   },
   {
     "Email": "visitor2@library.com",
     "Password": "vis123",
-    "FirstName": "Мария",
-    "LastName": "Иванова",
+    "FirstName": "РњР°СЂРёСЏ",
+    "LastName": "РРІР°РЅРѕРІР°",
     "Phone": "+7 (900) 890-12-34",
     "Role": "Visitor"
   },
   {
     "Email": "visitor3@library.com",
     "Password": "vis123",
-    "FirstName": "Андрей",
-    "LastName": "Козлов",
+    "FirstName": "РђРЅРґСЂРµР№",
+    "LastName": "РљРѕР·Р»РѕРІ",
     "Phone": "+7 (900) 901-23-45",
     "Role": "Visitor"
   },
   {
     "Email": "visitor4@library.com",
     "Password": "vis123",
-    "FirstName": "Татьяна",
-    "LastName": "Новикова",
+    "FirstName": "РўР°С‚СЊСЏРЅР°",
+    "LastName": "РќРѕРІРёРєРѕРІР°",
     "Phone": "+7 (900) 012-34-56",
     "Role": "Visitor"
   },
   {
     "Email": "visitor5@library.com",
     "Password": "vis123",
-    "FirstName": "Николай",
-    "LastName": "Морозов",
+    "FirstName": "РќРёРєРѕР»Р°Р№",
+    "LastName": "РњРѕСЂРѕР·РѕРІ",
     "Phone": "+7 (900) 123-45-67",
     "Role": "Visitor"
   },
   {
     "Email": "visitor6@library.com",
     "Password": "vis123",
-    "FirstName": "Елена",
-    "LastName": "Павлова",
+    "FirstName": "Р•Р»РµРЅР°",
+    "LastName": "РџР°РІР»РѕРІР°",
     "Phone": "+7 (900) 234-56-78",
     "Role": "Visitor"
   },
   {
     "Email": "visitor7@library.com",
     "Password": "vis123",
-    "FirstName": "Павел",
-    "LastName": "Соколов",
+    "FirstName": "РџР°РІРµР»",
+    "LastName": "РЎРѕРєРѕР»РѕРІ",
     "Phone": "+7 (900) 345-67-89",
     "Role": "Visitor"
   },
   {
     "Email": "visitor8@library.com",
     "Password": "vis123",
-    "FirstName": "Юлия",
-    "LastName": "Волкова",
+    "FirstName": "Р®Р»РёСЏ",
+    "LastName": "Р’РѕР»РєРѕРІР°",
     "Phone": "+7 (900) 456-78-90",
     "Role": "Visitor"
   },
   {
     "Email": "visitor9@library.com",
     "Password": "vis123",
-    "FirstName": "Игорь",
-    "LastName": "Лебедев",
+    "FirstName": "РРіРѕСЂСЊ",
+    "LastName": "Р›РµР±РµРґРµРІ",
     "Phone": "+7 (900) 567-89-01",
     "Role": "Visitor"
   },
   {
     "Email": "visitor10@library.com",
     "Password": "vis123",
-    "FirstName": "Анастасия",
-    "LastName": "Козлова",
+    "FirstName": "РђРЅР°СЃС‚Р°СЃРёСЏ",
+    "LastName": "РљРѕР·Р»РѕРІР°",
     "Phone": "+7 (900) 678-90-12",
     "Role": "Visitor"
   },
   {
     "Email": "visitor11@library.com",
     "Password": "vis123",
-    "FirstName": "Виктор",
-    "LastName": "Егоров",
+    "FirstName": "Р’РёРєС‚РѕСЂ",
+    "LastName": "Р•РіРѕСЂРѕРІ",
     "Phone": "+7 (900) 789-01-23",
     "Role": "Visitor"
   },
   {
     "Email": "visitor12@library.com",
     "Password": "vis123",
-    "FirstName": "Светлана",
-    "LastName": "Орлова",
+    "FirstName": "РЎРІРµС‚Р»Р°РЅР°",
+    "LastName": "РћСЂР»РѕРІР°",
     "Phone": "+7 (900) 890-12-34",
     "Role": "Visitor"
   },
   {
     "Email": "visitor13@library.com",
     "Password": "vis123",
-    "FirstName": "Артем",
-    "LastName": "Андреев",
+    "FirstName": "РђСЂС‚РµРј",
+    "LastName": "РђРЅРґСЂРµРµРІ",
     "Phone": "+7 (900) 901-23-45",
     "Role": "Visitor"
   },
   {
     "Email": "visitor14@library.com",
     "Password": "vis123",
-    "FirstName": "Людмила",
-    "LastName": "Макарова",
+    "FirstName": "Р›СЋРґРјРёР»Р°",
+    "LastName": "РњР°РєР°СЂРѕРІР°",
     "Phone": "+7 (900) 012-34-56",
     "Role": "Visitor"
   },
   {
     "Email": "visitor15@library.com",
     "Password": "vis123",
-    "FirstName": "Григорий",
-    "LastName": "Захаров",
+    "FirstName": "Р“СЂРёРіРѕСЂРёР№",
+    "LastName": "Р—Р°С…Р°СЂРѕРІ",
     "Phone": "+7 (900) 123-45-67",
     "Role": "Visitor"
   }
