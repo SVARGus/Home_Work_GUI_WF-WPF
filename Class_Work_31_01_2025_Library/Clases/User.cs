@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Class_Work_31_01_2025_Library.Clases
 {
-    public class LibraryAccount
+    public class User
     {
-        public string Email { get; set; }
+        public string Email { get; set; } // Логин для авторизации
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
-        public AccountRoles Role { get; set; }
-        public LibraryAccount() { }
-        public LibraryAccount(string email, string password, string firstname, string lastname, string phone, AccountRoles role)
+        public UserRol Role { get; set; }
+        public User() { }
+        public User(string email, string password, string firstname, string lastname, string phone, UserRol role)
         {
             Password = password;
             FirstName = firstname;

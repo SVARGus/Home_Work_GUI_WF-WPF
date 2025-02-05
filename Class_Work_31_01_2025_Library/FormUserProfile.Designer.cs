@@ -1,6 +1,6 @@
 ﻿namespace Class_Work_31_01_2025_Library
 {
-    partial class FormAccountProfile
+    partial class FormUserProfile
     {
         /// <summary>
         /// Required designer variable.

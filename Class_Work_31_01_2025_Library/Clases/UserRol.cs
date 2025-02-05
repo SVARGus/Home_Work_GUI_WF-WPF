@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Class_Work_31_01_2025_Library.Clases
 {
-    public enum AccountRoles
+    public enum UserRol
     {
-        Visitor, 
-        Employee, 
-        Admin
+        Admin, 
+        Employee,
+        Visitor
     }
 }

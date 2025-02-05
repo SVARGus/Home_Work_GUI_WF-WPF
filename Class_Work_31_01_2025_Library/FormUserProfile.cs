@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Class_Work_31_01_2025_Library
 {
-    public partial class FormAccountProfile : Form
+    public partial class FormUserProfile : Form
     {
-        public LibraryAccount account {  get; set; }
-        public FormAccountProfile(LibraryAccount accaunt = null)
+        public User account {  get; set; }
+        public FormUserProfile(User accaunt = null)
         {
             InitializeComponent();
-            foreach(var role in Enum.GetValues(typeof(AccountRoles)))
+            foreach(var role in Enum.GetValues(typeof(UserRol)))
             {
                 RoleComboBox.Items.Add(role.ToString());
             }

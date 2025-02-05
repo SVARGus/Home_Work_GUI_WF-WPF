@@ -22,14 +22,14 @@ namespace Class_Work_31_01_2025_Library
             }
             else
             {
-                var AccountArray = AccountResurses.GetListAccount().ToArray();
+                var AccountArray = UserResurs.GetListUsers().ToArray();
                 for (int i = 0; i < AccountArray.Length; i++)
                 {
                     if(AccountArray[i].Email == textBoxLogin.Text && AccountArray[i].Password == textBoxPassword.Text)
                     {
                         switch (AccountArray[i].Role)
                         {
-                            case AccountRoles.Admin:
+                            case UserRol.Admin:
                                 AdminMainWindows win = new AdminMainWindows();
                                 this.Visible = false;
                                 if(win.ShowDialog() == DialogResult.Cancel)
@@ -40,10 +40,10 @@ namespace Class_Work_31_01_2025_Library
                                 textBoxPassword.Text = string.Empty;
                                 this.Visible = true;
                                 break;
-                            case AccountRoles.Employee:
+                            case UserRol.Employee:
 
                                 break;
-                            case AccountRoles.Visitor: 
+                            case UserRol.Visitor: 
                                 
                                 break;
                         }
