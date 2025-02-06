@@ -11,14 +11,14 @@ namespace Class_Work_31_01_2025_Library.Date
 {
     public static class UserResurs
     {
-        private static List<User> listUsers = new List<User>();
+        private static List<User> listUsers;
         private static string FilePath = "libraryUsers.json"; // Поле пока будет неизменным в проекте, позже добавить метод доступа к адрессу
 
         public static List<User> GetListUsers()
         {
-            LoadListUsers(); // Загрузка базы пользователей из json файла
             if (listUsers == null) // Если файл не загружен, то будет создан один единственный админ для тестирования программы
             {
+                LoadListUsers(); // Загрузка базы пользователей из json файла
                 listUsers = new List<User>();
                 listUsers.Add(new User("admin", "12345", "Admin", "admin", "+79219879635", UserRol.Admin));
             }
