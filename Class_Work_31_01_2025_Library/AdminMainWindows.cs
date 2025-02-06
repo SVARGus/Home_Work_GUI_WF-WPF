@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,12 +25,13 @@ namespace Class_Work_31_01_2025_Library
         {
             //accountListBox.Items.Clear();
             var AccountArray = UserResurs.GetListUsers();
+            accountListBox.DataSource = null;
             accountListBox.DataSource = AccountArray; // Лист бокс не обновляется после изменений в листе пользователей
         }
 
         private void btImportAccount_Click(object sender, EventArgs e)
         {
-
+            UserResurs.SaveListUsers();
         }
 
         private void btExitAdmin_Click(object sender, EventArgs e)
@@ -41,7 +43,12 @@ namespace Class_Work_31_01_2025_Library
         private void btCreateAccount_Click(object sender, EventArgs e)
         {
             var createAccount = new FormUserProfile();
-
+            if(createAccount.ShowDialog() == DialogResult.OK)
+            {
+                var AccountArray = UserResurs.GetListUsers();
+                AccountArray.Add(createAccount.UserData);
+                UpdateListBox();
+            }
         }
 
         private void btEdeteAccount_Click(object sender, EventArgs e)
@@ -57,15 +64,30 @@ namespace Class_Work_31_01_2025_Library
             else if (accountListBox.SelectedIndex != -1)
             {
                 Clases.User selectAccount = (Clases.User)accountListBox.SelectedItem;
-                FormUserProfile createAccount = new FormUserProfile(selectAccount);
-                if (createAccount.ShowDialog() == DialogResult.OK)
+                FormUserProfile edeteAccount = new FormUserProfile(selectAccount);
+                if (edeteAccount.ShowDialog() == DialogResult.OK)
                 {
                     int index = accountListBox.SelectedIndex;
                     var AccountArray = UserResurs.GetListUsers();
-                    AccountArray[index] = createAccount.UserData;
+                    AccountArray[index] = edeteAccount.UserData;
                     UpdateListBox();
                 }
             }
+        }
+
+        private void btDeleteAccount_Click(object sender, EventArgs e)
+        {
+            if (accountListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите пользователя для удаления.",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+            var listUsers = UserResurs.GetListUsers();
+            listUsers.RemoveAt(accountListBox.SelectedIndex);
+            UpdateListBox();
         }
     }
 }

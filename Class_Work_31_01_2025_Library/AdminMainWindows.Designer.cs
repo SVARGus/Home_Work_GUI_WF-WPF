@@ -39,18 +39,20 @@
             // accountListBox
             // 
             accountListBox.FormattingEnabled = true;
-            accountListBox.ItemHeight = 15;
-            accountListBox.Location = new Point(43, 70);
+            accountListBox.ItemHeight = 25;
+            accountListBox.Location = new Point(61, 117);
+            accountListBox.Margin = new Padding(4, 5, 4, 5);
             accountListBox.Name = "accountListBox";
-            accountListBox.Size = new Size(624, 214);
+            accountListBox.Size = new Size(890, 354);
             accountListBox.TabIndex = 0;
             // 
             // btCreateAccount
             // 
             btCreateAccount.BackColor = Color.PaleGreen;
-            btCreateAccount.Location = new Point(43, 23);
+            btCreateAccount.Location = new Point(61, 38);
+            btCreateAccount.Margin = new Padding(4, 5, 4, 5);
             btCreateAccount.Name = "btCreateAccount";
-            btCreateAccount.Size = new Size(298, 23);
+            btCreateAccount.Size = new Size(426, 38);
             btCreateAccount.TabIndex = 1;
             btCreateAccount.Text = "Создать пользователя";
             btCreateAccount.UseVisualStyleBackColor = false;
@@ -58,9 +60,10 @@
             // 
             // btExitAdmin
             // 
-            btExitAdmin.Location = new Point(571, 23);
+            btExitAdmin.Location = new Point(816, 38);
+            btExitAdmin.Margin = new Padding(4, 5, 4, 5);
             btExitAdmin.Name = "btExitAdmin";
-            btExitAdmin.Size = new Size(96, 23);
+            btExitAdmin.Size = new Size(137, 38);
             btExitAdmin.TabIndex = 2;
             btExitAdmin.Text = "Выход";
             btExitAdmin.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // btImportAccount
             // 
-            btImportAccount.Location = new Point(43, 335);
+            btImportAccount.Location = new Point(61, 558);
+            btImportAccount.Margin = new Padding(4, 5, 4, 5);
             btImportAccount.Name = "btImportAccount";
-            btImportAccount.Size = new Size(226, 23);
+            btImportAccount.Size = new Size(323, 38);
             btImportAccount.TabIndex = 3;
             btImportAccount.Text = "Импорт";
             btImportAccount.UseVisualStyleBackColor = true;
@@ -79,18 +83,21 @@
             // btDeleteAccount
             // 
             btDeleteAccount.BackColor = Color.IndianRed;
-            btDeleteAccount.Location = new Point(441, 335);
+            btDeleteAccount.Location = new Point(630, 558);
+            btDeleteAccount.Margin = new Padding(4, 5, 4, 5);
             btDeleteAccount.Name = "btDeleteAccount";
-            btDeleteAccount.Size = new Size(226, 23);
+            btDeleteAccount.Size = new Size(323, 38);
             btDeleteAccount.TabIndex = 4;
             btDeleteAccount.Text = "Удалить";
             btDeleteAccount.UseVisualStyleBackColor = false;
+            btDeleteAccount.Click += btDeleteAccount_Click;
             // 
             // btEdeteAccount
             // 
-            btEdeteAccount.Location = new Point(441, 299);
+            btEdeteAccount.Location = new Point(630, 498);
+            btEdeteAccount.Margin = new Padding(4, 5, 4, 5);
             btEdeteAccount.Name = "btEdeteAccount";
-            btEdeteAccount.Size = new Size(226, 23);
+            btEdeteAccount.Size = new Size(323, 38);
             btEdeteAccount.TabIndex = 5;
             btEdeteAccount.Text = "Редактировать";
             btEdeteAccount.UseVisualStyleBackColor = true;
@@ -98,15 +105,16 @@
             // 
             // AdminMainWindows
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(711, 377);
+            ClientSize = new Size(1016, 628);
             Controls.Add(btEdeteAccount);
             Controls.Add(btDeleteAccount);
             Controls.Add(btImportAccount);
             Controls.Add(btExitAdmin);
             Controls.Add(btCreateAccount);
             Controls.Add(accountListBox);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "AdminMainWindows";
             Text = "AdminMainWindows";
             ResumeLayout(false);

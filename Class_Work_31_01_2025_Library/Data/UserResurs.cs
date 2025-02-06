@@ -27,23 +27,23 @@ namespace Class_Work_31_01_2025_Library.Date
             }
             return listUsers;
         }
-        public static void AddAccount(User account, ListBox listBox) // Проверить
-        {
-            listUsers.Add(account);
-            listBox.Items.Add(account);
-        }
-        public static void DeleteAccount(User account, ListBox listBox) // Проверить
-        {
-            listUsers.Remove(account);
-            listBox.Items.Remove(account);
-        }
-        public static void EdeteAccount(User account, ListBox listBox) // Проверить
-        {
-            listUsers.Remove(account);
-            listBox.Items.Remove(account);
-            listUsers.Add(account);
-            listBox.Items.Add(account);
-        }
+        //public static void AddAccount(User account, ListBox listBox) // Удалить
+        //{
+        //    listUsers.Add(account);
+        //    listBox.Items.Add(account);
+        //}
+        //public static void DeleteAccount(User account, ListBox listBox) // Удалить
+        //{
+        //    listUsers.Remove(account);
+        //    listBox.Items.Remove(account);
+        //}
+        //public static void EdeteAccount(User account, ListBox listBox) // Удалить
+        //{
+        //    listUsers.Remove(account);
+        //    listBox.Items.Remove(account);
+        //    listUsers.Add(account);
+        //    listBox.Items.Add(account);
+        //}
         private static void LoadListUsers(string filePath = null)
         {
             if(filePath == null) 
@@ -56,10 +56,10 @@ namespace Class_Work_31_01_2025_Library.Date
                     string strJson = File.ReadAllText(filePath);
                     List<User> loadListUsers = JsonSerializer.Deserialize<List<User>>(strJson);
                     listUsers = loadListUsers;
-                    MessageBox.Show("Данные загружены", // Данный Мессандж бокс можно потом удалить, он для теста
-                        "Load Users",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    //MessageBox.Show("Данные загружены", // Данный Мессандж бокс можно потом удалить, он для теста
+                    //    "Load Users",
+                    //    MessageBoxButtons.OK,
+                    //    MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -76,6 +76,16 @@ namespace Class_Work_31_01_2025_Library.Date
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+        public static void SaveListUsers(string filePath = null)
+        {
+            if (filePath == null)
+                filePath = FilePath;
+            string jsonStr = JsonSerializer.Serialize(listUsers, new JsonSerializerOptions
+            {
+                WriteIndented = true 
+            });
+            File.WriteAllText(filePath, jsonStr);
         }
     }
 }
