@@ -1,14 +1,22 @@
 using Class_Work_31_01_2025_Library.Clases;
 using Class_Work_31_01_2025_Library.Date;
 using System.Diagnostics;
+using System.Windows.Forms;
 namespace Class_Work_31_01_2025_Library
 {
     public partial class FormAutorization : Form
     {
+        private ToolTip toolTipAutorization;
         public FormAutorization()
         {
             InitializeComponent();
-
+            toolTipAutorization = new ToolTip();
+            toolTipAutorization.AutoPopDelay = 2000;
+            toolTipAutorization.InitialDelay = 500;
+            toolTipAutorization.ReshowDelay = 500;
+            toolTipAutorization.ShowAlways = true;
+            toolTipAutorization.SetToolTip(textBoxLogin, "Введите электронную почту");
+            toolTipAutorization.SetToolTip(textBoxPassword, "Введите свой пароль");
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -23,7 +31,8 @@ namespace Class_Work_31_01_2025_Library
             }
             else
             {
-                var AccountArray = UserResurs.GetListUsers().ToList();
+                bool notSearchAccount = false;
+                var AccountArray = UserResurs.GetListUsers();
                 for (int i = 0; i < AccountArray.Count; i++)
                 {
                     if(AccountArray[i].Email == textBoxLogin.Text && AccountArray[i].Password == textBoxPassword.Text)
@@ -48,7 +57,23 @@ namespace Class_Work_31_01_2025_Library
                                 
                                 break;
                         }
+                        notSearchAccount = true;
                     }
+                    else if(AccountArray[i].Email == textBoxLogin.Text && AccountArray[i].Password != textBoxPassword.Text)
+                    {
+                        MessageBox.Show("Не верно введен пароль, повторите попытку",
+                            "Не верный пароль",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        notSearchAccount = true;
+                    }
+                }
+                if (!notSearchAccount)
+                {
+                    MessageBox.Show("Пользователь не зарегестрирован! Обарититесь к сотруднику библиотеки для регистрации",
+                        "Пользователь не зарегестрирован", 
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
             }
             

@@ -19,8 +19,11 @@ namespace Class_Work_31_01_2025_Library.Date
             if (listUsers == null) // Если файл не загружен, то будет создан один единственный админ для тестирования программы
             {
                 LoadListUsers(); // Загрузка базы пользователей из json файла
-                listUsers = new List<User>();
-                listUsers.Add(new User("admin", "12345", "Admin", "admin", "+79219879635", UserRol.Admin));
+                if (listUsers == null)
+                {
+                    listUsers = new List<User>();
+                    listUsers.Add(new User("admin", "12345", "Admin", "admin", "+79219879635", UserRol.Admin));
+                }
             }
             return listUsers;
         }
@@ -46,7 +49,7 @@ namespace Class_Work_31_01_2025_Library.Date
             if(filePath == null) 
                 filePath = FilePath;
             // реализация загрузки файла
-            if (File.Exists(filePath)) // Не находит файл, выйснить причину
+            if (File.Exists(filePath))
             {
                 try
                 {

@@ -47,73 +47,77 @@
             // 
             // label1
             // 
-            label1.Location = new Point(12, 35);
+            label1.Location = new Point(14, 47);
             label1.Name = "label1";
-            label1.Size = new Size(116, 23);
+            label1.Size = new Size(133, 31);
             label1.TabIndex = 0;
             label1.Text = "Email / Login";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
-            label2.Location = new Point(12, 93);
+            label2.Location = new Point(14, 124);
             label2.Name = "label2";
-            label2.Size = new Size(116, 23);
+            label2.Size = new Size(133, 31);
             label2.TabIndex = 1;
             label2.Text = "FirstName";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
-            label3.Location = new Point(12, 122);
+            label3.Location = new Point(14, 163);
             label3.Name = "label3";
-            label3.Size = new Size(116, 23);
+            label3.Size = new Size(133, 31);
             label3.TabIndex = 2;
             label3.Text = "LastName";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
-            label4.Location = new Point(12, 151);
+            label4.Location = new Point(14, 201);
             label4.Name = "label4";
-            label4.Size = new Size(116, 23);
+            label4.Size = new Size(133, 31);
             label4.TabIndex = 3;
             label4.Text = "Phone";
             label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // EmailTextBox
             // 
-            EmailTextBox.Location = new Point(134, 35);
+            EmailTextBox.Location = new Point(153, 47);
+            EmailTextBox.Margin = new Padding(3, 4, 3, 4);
             EmailTextBox.Name = "EmailTextBox";
-            EmailTextBox.Size = new Size(143, 23);
+            EmailTextBox.Size = new Size(163, 27);
             EmailTextBox.TabIndex = 4;
             // 
             // firstNameTextBox
             // 
-            firstNameTextBox.Location = new Point(134, 93);
+            firstNameTextBox.Location = new Point(153, 124);
+            firstNameTextBox.Margin = new Padding(3, 4, 3, 4);
             firstNameTextBox.Name = "firstNameTextBox";
-            firstNameTextBox.Size = new Size(143, 23);
+            firstNameTextBox.Size = new Size(163, 27);
             firstNameTextBox.TabIndex = 5;
             // 
             // lastNameTextBox
             // 
-            lastNameTextBox.Location = new Point(134, 122);
+            lastNameTextBox.Location = new Point(153, 163);
+            lastNameTextBox.Margin = new Padding(3, 4, 3, 4);
             lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(143, 23);
+            lastNameTextBox.Size = new Size(163, 27);
             lastNameTextBox.TabIndex = 6;
             // 
             // phoneTextBox
             // 
-            phoneTextBox.Location = new Point(134, 151);
+            phoneTextBox.Location = new Point(153, 201);
+            phoneTextBox.Margin = new Padding(3, 4, 3, 4);
             phoneTextBox.Name = "phoneTextBox";
-            phoneTextBox.Size = new Size(143, 23);
+            phoneTextBox.Size = new Size(163, 27);
             phoneTextBox.TabIndex = 7;
             // 
             // label5
             // 
-            label5.Location = new Point(12, 180);
+            label5.Location = new Point(14, 240);
             label5.Name = "label5";
-            label5.Size = new Size(116, 23);
+            label5.Size = new Size(133, 31);
             label5.TabIndex = 8;
             label5.Text = "Roles";
             label5.TextAlign = ContentAlignment.MiddleLeft;
@@ -121,61 +125,67 @@
             // RoleComboBox
             // 
             RoleComboBox.FormattingEnabled = true;
-            RoleComboBox.Location = new Point(134, 180);
+            RoleComboBox.Location = new Point(153, 240);
+            RoleComboBox.Margin = new Padding(3, 4, 3, 4);
             RoleComboBox.Name = "RoleComboBox";
-            RoleComboBox.Size = new Size(143, 23);
+            RoleComboBox.Size = new Size(163, 28);
             RoleComboBox.TabIndex = 9;
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Location = new Point(134, 64);
+            passwordTextBox.Location = new Point(153, 85);
+            passwordTextBox.Margin = new Padding(3, 4, 3, 4);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.PasswordChar = '*';
-            passwordTextBox.Size = new Size(143, 23);
+            passwordTextBox.Size = new Size(163, 27);
             passwordTextBox.TabIndex = 11;
             // 
             // label6
             // 
-            label6.Location = new Point(12, 64);
+            label6.Location = new Point(14, 85);
             label6.Name = "label6";
-            label6.Size = new Size(116, 23);
+            label6.Size = new Size(133, 31);
             label6.TabIndex = 10;
             label6.Text = "Password";
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btSaveAccount
             // 
-            btSaveAccount.Location = new Point(12, 228);
+            btSaveAccount.Location = new Point(14, 304);
+            btSaveAccount.Margin = new Padding(3, 4, 3, 4);
             btSaveAccount.Name = "btSaveAccount";
-            btSaveAccount.Size = new Size(116, 23);
+            btSaveAccount.Size = new Size(133, 31);
             btSaveAccount.TabIndex = 12;
             btSaveAccount.Text = "Сохранить";
             btSaveAccount.UseVisualStyleBackColor = true;
+            btSaveAccount.Click += btSaveAccount_Click;
             // 
             // btCancel
             // 
-            btCancel.Location = new Point(161, 228);
+            btCancel.Location = new Point(184, 304);
+            btCancel.Margin = new Padding(3, 4, 3, 4);
             btCancel.Name = "btCancel";
-            btCancel.Size = new Size(116, 23);
+            btCancel.Size = new Size(133, 31);
             btCancel.TabIndex = 13;
             btCancel.Text = "Отмена";
             btCancel.UseVisualStyleBackColor = true;
+            btCancel.Click += btCancel_Click;
             // 
             // label7
             // 
             label7.Dock = DockStyle.Top;
             label7.Location = new Point(0, 0);
             label7.Name = "label7";
-            label7.Size = new Size(295, 23);
+            label7.Size = new Size(337, 31);
             label7.TabIndex = 14;
             label7.Text = "Заполните анкетные данные";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // FormAccountProfile
+            // FormUserProfile
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(295, 271);
+            ClientSize = new Size(337, 361);
             Controls.Add(label7);
             Controls.Add(btCancel);
             Controls.Add(btSaveAccount);
@@ -191,7 +201,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "FormAccountProfile";
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FormUserProfile";
             Text = "Данные профиля пользователя";
             ResumeLayout(false);
             PerformLayout();

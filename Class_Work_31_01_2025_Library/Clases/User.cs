@@ -26,7 +26,7 @@ namespace Class_Work_31_01_2025_Library.Clases
         }
         public override string ToString()
         {
-            return $"Login: {Email}, Password: {Password}, Name: {FirstName} {LastName}, Phone: {Phone}, role: {Role.ToString()}.";
+            return $"{Email} {FirstName} {LastName} {Phone} {Role.ToString()}.";
         }
     }
 }

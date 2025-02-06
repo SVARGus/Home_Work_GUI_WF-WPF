@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             loginButton = new Button();
             textBoxLogin = new TextBox();
             textBoxPassword = new TextBox();
             label1 = new Label();
+            toolTip1 = new ToolTip(components);
             SuspendLayout();
             // 
             // loginButton
             // 
-            loginButton.Location = new Point(51, 124);
+            loginButton.Location = new Point(58, 165);
+            loginButton.Margin = new Padding(3, 4, 3, 4);
             loginButton.Name = "loginButton";
-            loginButton.Size = new Size(200, 25);
+            loginButton.Size = new Size(229, 33);
             loginButton.TabIndex = 0;
             loginButton.Text = "Вход";
             loginButton.UseVisualStyleBackColor = true;
@@ -46,37 +49,40 @@
             // 
             // textBoxLogin
             // 
-            textBoxLogin.Location = new Point(28, 44);
+            textBoxLogin.Location = new Point(32, 59);
+            textBoxLogin.Margin = new Padding(3, 4, 3, 4);
             textBoxLogin.Name = "textBoxLogin";
-            textBoxLogin.Size = new Size(258, 23);
+            textBoxLogin.Size = new Size(294, 27);
             textBoxLogin.TabIndex = 1;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(28, 82);
+            textBoxPassword.Location = new Point(32, 109);
+            textBoxPassword.Margin = new Padding(3, 4, 3, 4);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '*';
-            textBoxPassword.Size = new Size(258, 23);
+            textBoxPassword.Size = new Size(294, 27);
             textBoxPassword.TabIndex = 2;
             // 
             // label1
             // 
-            label1.Location = new Point(28, 13);
+            label1.Location = new Point(32, 17);
             label1.Name = "label1";
-            label1.Size = new Size(258, 15);
+            label1.Size = new Size(295, 20);
             label1.TabIndex = 3;
             label1.Text = "Введите логин и пароль";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormAutorization
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(311, 175);
+            ClientSize = new Size(355, 233);
             Controls.Add(label1);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxLogin);
             Controls.Add(loginButton);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormAutorization";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Авторизация";
@@ -90,5 +96,6 @@
         private TextBox textBoxLogin;
         private TextBox textBoxPassword;
         private Label label1;
+        private ToolTip toolTip1;
     }
 }

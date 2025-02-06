@@ -22,12 +22,9 @@ namespace Class_Work_31_01_2025_Library
         }
         private void UpdateListBox() // Метод обновления данных в ListBox после любых изменений
         {
-            accountListBox.Items.Clear();
-            var AccountArray = UserResurs.GetListUsers().ToArray();
-            foreach (var user in AccountArray)
-            {
-                accountListBox.Items.Add(user);
-            }
+            //accountListBox.Items.Clear();
+            var AccountArray = UserResurs.GetListUsers();
+            accountListBox.DataSource = AccountArray; // Лист бокс не обновляется после изменений в листе пользователей
         }
 
         private void btImportAccount_Click(object sender, EventArgs e)
@@ -61,14 +58,12 @@ namespace Class_Work_31_01_2025_Library
             {
                 Clases.User selectAccount = (Clases.User)accountListBox.SelectedItem;
                 FormUserProfile createAccount = new FormUserProfile(selectAccount);
-                //User selectedUser = (User)listBoxUsers.SelectedItem;
-                //UserForm userForm = new UserForm(selectedUser);
                 if (createAccount.ShowDialog() == DialogResult.OK)
                 {
                     int index = accountListBox.SelectedIndex;
                     var AccountArray = UserResurs.GetListUsers();
-                    //AccountArray[index] = FormUserProfile.
-                    //UpdateListBox();
+                    AccountArray[index] = createAccount.UserData;
+                    UpdateListBox();
                 }
             }
         }
