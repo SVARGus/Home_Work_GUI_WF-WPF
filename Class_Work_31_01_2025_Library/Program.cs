@@ -1,4 +1,4 @@
-namespace Class_Work_31_01_2025_Library
+namespace Home_and_Class_Work_31_01_2025_Library
 {
     internal static class Program
     {

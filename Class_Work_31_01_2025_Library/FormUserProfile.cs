@@ -1,4 +1,4 @@
-﻿using Class_Work_31_01_2025_Library.Clases;
+﻿using Home_and_Class_Work_31_01_2025_Library.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Class_Work_31_01_2025_Library
+namespace Home_and_Class_Work_31_01_2025_Library
 {
     public partial class FormUserProfile : Form
     {

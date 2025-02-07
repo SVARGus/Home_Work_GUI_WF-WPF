@@ -36,7 +36,7 @@ namespace Home_and_Class_Work_31_01_2025_Library.Clases
         }
         public override string ToString()
         {
-            return base.ToString(); // подумать что будет отображаться в списке книг
+            return $"{Title} {Author} {Genre}, Доступно - {AvailableCopies}";
         }
     }
 }

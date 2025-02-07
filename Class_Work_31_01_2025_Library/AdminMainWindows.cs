@@ -1,5 +1,5 @@
-﻿using Class_Work_31_01_2025_Library.Clases;
-using Class_Work_31_01_2025_Library.Date;
+﻿using Home_and_Class_Work_31_01_2025_Library.Clases;
+using Home_and_Class_Work_31_01_2025_Library.Data;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Class_Work_31_01_2025_Library
+namespace Home_and_Class_Work_31_01_2025_Library
 {
     public partial class AdminMainWindows : Form
     {
