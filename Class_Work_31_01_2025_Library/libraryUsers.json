@@ -16,8 +16,8 @@
     "Role": 0
   },
   {
-    "Email": "employee1@library.com",
-    "Password": "emp123",
+    "Email": "worker",
+    "Password": "12345",
     "FirstName": "Анна",
     "LastName": "Петрова",
     "Phone": "+7 (900) 234-56-78",

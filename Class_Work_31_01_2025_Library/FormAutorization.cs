@@ -51,7 +51,15 @@ namespace Home_and_Class_Work_31_01_2025_Library
                                 this.Visible = true;
                                 break;
                             case UserRol.Employee:
-
+                                LibraryStaffWorkerForm libStaf = new LibraryStaffWorkerForm();
+                                this.Visible = false;
+                                if (libStaf.ShowDialog() == DialogResult.Cancel)
+                                {
+                                    libStaf.Close();
+                                }
+                                textBoxLogin.Text = string.Empty;
+                                textBoxPassword.Text = string.Empty;
+                                this.Visible = true;
                                 break;
                             case UserRol.Visitor: 
                                 

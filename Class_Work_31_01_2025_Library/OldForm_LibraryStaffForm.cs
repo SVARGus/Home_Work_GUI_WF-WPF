@@ -13,9 +13,9 @@ using Home_and_Class_Work_31_01_2025_Library.Data;
 
 namespace Home_and_Class_Work_31_01_2025_Library
 {
-    public partial class LibraryStaffForm : Form
+    public partial class OldForm_LibraryStaffForm : Form
     {
-        public LibraryStaffForm()
+        public OldForm_LibraryStaffForm()
         {
             InitializeComponent();
             BookResurs.GetListBooks();
