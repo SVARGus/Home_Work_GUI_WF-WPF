@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <None Update="libraryBooks.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="libraryUsers.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -6,10 +6,10 @@
     "Genre": "Dystopian",
     "Publisher": "Secker & Warburg",
     "Description": "A dystopian novel set in a totalitarian society ruled by the Party.",
-    "Font": "Arial",
-    "Size": 12,
-    "Color": "Black",
-    "BackGroundColor": "White"
+    "TextFont": "Arial",
+    "TextSize": 12,
+    "TextColor": "Black",
+    "TextBackGroundColor": "White"
   },
   {
     "Id": 2,
@@ -18,10 +18,10 @@
     "Genre": "Fiction",
     "Publisher": "J.B. Lippincott & Co.",
     "Description": "A novel about racial injustice and the loss of innocence.",
-    "Font": "Arial",
-    "Size": 12,
-    "Color": "Black",
-    "BackGroundColor": "White"
+    "TextFont": "Vivaldi",
+    "TextSize": 20,
+    "TextColor": "Black",
+    "TextBackGroundColor": "Coral"
   },
   {
     "Id": 3,
@@ -30,10 +30,10 @@
     "Genre": "Tragedy",
     "Publisher": "Charles Scribner's Sons",
     "Description": "A story of the American Dream and its corruption.",
-    "Font": "Arial",
-    "Size": 12,
-    "Color": "Black",
-    "BackGroundColor": "White"
+    "TextFont": "Arial",
+    "TextSize": 12,
+    "TextColor": "Black",
+    "TextBackGroundColor": "White"
   },
   {
     "Id": 4,
@@ -42,10 +42,10 @@
     "Genre": "Romance",
     "Publisher": "T. Egerton, Whitehall",
     "Description": "A romantic novel of manners.",
-    "Font": "Arial",
-    "Size": 12,
-    "Color": "Black",
-    "BackGroundColor": "White"
+    "TextFont": "Arial",
+    "TextSize": 12,
+    "TextColor": "Black",
+    "TextBackGroundColor": "White"
   },
   {
     "Id": 5,
@@ -54,10 +54,10 @@
     "Genre": "Realistic Fiction",
     "Publisher": "Little, Brown and Company",
     "Description": "A story of teenage rebellion and alienation.",
-    "Font": "Arial",
-    "Size": 12,
-    "Color": "Black",
-    "BackGroundColor": "White"
+    "TextFont": "Arial",
+    "TextSize": 12,
+    "TextColor": "Black",
+    "TextBackGroundColor": "White"
   },
   {
     "Id": 6,
@@ -66,9 +66,9 @@
     "Genre": "Fantasy",
     "Publisher": "George Allen & Unwin",
     "Description": "A fantasy novel about the adventures of Bilbo Baggins.",
-    "Font": "Arial",
-    "Size": 12,
-    "Color": "Black",
-    "BackGroundColor": "White"
+    "TextFont": "Arial",
+    "TextSize": 12,
+    "TextColor": "Black",
+    "TextBackGroundColor": "White"
   }
 ]
