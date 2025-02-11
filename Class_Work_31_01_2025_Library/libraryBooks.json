@@ -5,10 +5,11 @@
     "Author": "George Orwell",
     "Genre": "Dystopian",
     "Publisher": "Secker & Warburg",
-    "IsAvailable": true,
-    "TotalCopies": 5,
-    "AvailableCopies": 5,
-    "Description": "A dystopian novel set in a totalitarian society ruled by the Party."
+    "Description": "A dystopian novel set in a totalitarian society ruled by the Party.",
+    "Font": "Arial",
+    "Size": 12,
+    "Color": "Black",
+    "BackGroundColor": "White"
   },
   {
     "Id": 2,
@@ -16,10 +17,11 @@
     "Author": "Harper Lee",
     "Genre": "Fiction",
     "Publisher": "J.B. Lippincott & Co.",
-    "IsAvailable": true,
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "A novel about racial injustice and the loss of innocence."
+    "Description": "A novel about racial injustice and the loss of innocence.",
+    "Font": "Arial",
+    "Size": 12,
+    "Color": "Black",
+    "BackGroundColor": "White"
   },
   {
     "Id": 3,
@@ -27,10 +29,11 @@
     "Author": "F. Scott Fitzgerald",
     "Genre": "Tragedy",
     "Publisher": "Charles Scribner's Sons",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "A story of the American Dream and its corruption."
+    "Description": "A story of the American Dream and its corruption.",
+    "Font": "Arial",
+    "Size": 12,
+    "Color": "Black",
+    "BackGroundColor": "White"
   },
   {
     "Id": 4,
@@ -38,10 +41,11 @@
     "Author": "Jane Austen",
     "Genre": "Romance",
     "Publisher": "T. Egerton, Whitehall",
-    "IsAvailable": true,
-    "TotalCopies": 6,
-    "AvailableCopies": 6,
-    "Description": "A romantic novel of manners."
+    "Description": "A romantic novel of manners.",
+    "Font": "Arial",
+    "Size": 12,
+    "Color": "Black",
+    "BackGroundColor": "White"
   },
   {
     "Id": 5,
@@ -49,10 +53,11 @@
     "Author": "J.D. Salinger",
     "Genre": "Realistic Fiction",
     "Publisher": "Little, Brown and Company",
-    "IsAvailable": true,
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "A story of teenage rebellion and alienation."
+    "Description": "A story of teenage rebellion and alienation.",
+    "Font": "Arial",
+    "Size": 12,
+    "Color": "Black",
+    "BackGroundColor": "White"
   },
   {
     "Id": 6,
@@ -60,273 +65,10 @@
     "Author": "J.R.R. Tolkien",
     "Genre": "Fantasy",
     "Publisher": "George Allen & Unwin",
-    "IsAvailable": true,
-    "TotalCopies": 7,
-    "AvailableCopies": 7,
-    "Description": "A fantasy novel about the adventures of Bilbo Baggins."
-  },
-  {
-    "Id": 7,
-    "Title": "Fahrenheit 451",
-    "Author": "Ray Bradbury",
-    "Genre": "Dystopian",
-    "Publisher": "Ballantine Books",
-    "IsAvailable": true,
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "A dystopian novel about censorship and the power of books."
-  },
-  {
-    "Id": 8,
-    "Title": "Moby-Dick",
-    "Author": "Herman Melville",
-    "Genre": "Adventure",
-    "Publisher": "Harper & Brothers",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "An epic tale of the voyage of the whaling ship Pequod."
-  },
-  {
-    "Id": 9,
-    "Title": "War and Peace",
-    "Author": "Leo Tolstoy",
-    "Genre": "Historical Fiction",
-    "Publisher": "The Russian Messenger",
-    "IsAvailable": true,
-    "TotalCopies": 5,
-    "AvailableCopies": 5,
-    "Description": "A novel that intertwines the lives of individuals with historical events."
-  },
-  {
-    "Id": 10,
-    "Title": "The Odyssey",
-    "Author": "Homer",
-    "Genre": "Epic Poetry",
-    "Publisher": "Various",
-    "IsAvailable": true,
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "An ancient Greek epic poem about the journey of Odysseus."
-  },
-  {
-    "Id": 11,
-    "Title": "Crime and Punishment",
-    "Author": "Fyodor Dostoevsky",
-    "Genre": "Psychological Fiction",
-    "Publisher": "The Russian Messenger",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "A novel exploring the psychological turmoil of a murderer."
-  },
-  {
-    "Id": 12,
-    "Title": "The Brothers Karamazov",
-    "Author": "Fyodor Dostoevsky",
-    "Genre": "Philosophical Fiction",
-    "Publisher": "The Russian Messenger",
-    "IsAvailable": true,
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "A philosophical novel about faith, doubt, and morality."
-  },
-  {
-    "Id": 13,
-    "Title": "The Divine Comedy",
-    "Author": "Dante Alighieri",
-    "Genre": "Epic Poetry",
-    "Publisher": "Various",
-    "IsAvailable": true,
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "An epic poem describing the journey through Hell, Purgatory, and Heaven."
-  },
-  {
-    "Id": 14,
-    "Title": "The Iliad",
-    "Author": "Homer",
-    "Genre": "Epic Poetry",
-    "Publisher": "Various",
-    "IsAvailable": true,
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "An ancient Greek epic poem about the Trojan War."
-  },
-  {
-    "Id": 15,
-    "Title": "Brave New World",
-    "Author": "Aldous Huxley",
-    "Genre": "Dystopian",
-    "Publisher": "Chatto & Windus",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "A dystopian novel about a futuristic society driven by technology."
-  },
-  {
-    "Id": 16,
-    "Title": "The Lord of the Rings",
-    "Author": "J.R.R. Tolkien",
-    "Genre": "Fantasy",
-    "Publisher": "George Allen & Unwin",
-    "IsAvailable": true,
-    "TotalCopies": 6,
-    "AvailableCopies": 6,
-    "Description": "A high-fantasy epic about the quest to destroy the One Ring."
-  },
-  {
-    "Id": 17,
-    "Title": "Anna Karenina",
-    "Author": "Leo Tolstoy",
-    "Genre": "Realist Novel",
-    "Publisher": "The Russian Messenger",
-    "IsAvailable": true,
-    "TotalCopies": 5,
-    "AvailableCopies": 5,
-    "Description": "A tragic novel about love, infidelity, and societal norms."
-  },
-  {
-    "Id": 18,
-    "Title": "The Alchemist",
-    "Author": "Paulo Coelho",
-    "Genre": "Fantasy",
-    "Publisher": "HarperTorch",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "A philosophical book about following one's dreams."
-  },
-  {
-    "Id": 19,
-    "Title": "The Little Prince",
-    "Author": "Antoine de Saint-Exup?ry",
-    "Genre": "Children's Literature",
-    "Publisher": "Reynal & Hitchcock",
-    "IsAvailable": true,
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "A poetic tale about a young prince's journey through the universe."
-  },
-  {
-    "Id": 20,
-    "Title": "The Picture of Dorian Gray",
-    "Author": "Oscar Wilde",
-    "Genre": "Gothic Fiction",
-    "Publisher": "Lippincott's Monthly Magazine",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "A novel about vanity, morality, and the consequences of eternal youth."
-  },
-  {
-    "Id": 21,
-    "Title": "Frankenstein",
-    "Author": "Mary Shelley",
-    "Genre": "Gothic Fiction",
-    "Publisher": "Lackington, Hughes, Harding, Mavor & Jones",
-    "IsAvailable": true,
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "A novel about the creation of a sentient creature by a scientist."
-  },
-  {
-    "Id": 22,
-    "Title": "Dracula",
-    "Author": "Bram Stoker",
-    "Genre": "Gothic Fiction",
-    "Publisher": "Archibald Constable and Company",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "A Gothic horror novel about the vampire Count Dracula."
-  },
-  {
-    "Id": 23,
-    "Title": "The Adventures of Huckleberry Finn",
-    "Author": "Mark Twain",
-    "Genre": "Adventure",
-    "Publisher": "Chatto & Windus",
-    "IsAvailable": true,
-    "TotalCopies": 5,
-    "AvailableCopies": 5,
-    "Description": "A novel about the adventures of a boy and a runaway slave."
-  },
-  {
-    "Id": 24,
-    "Title": "The Count of Monte Cristo",
-    "Author": "Alexandre Dumas",
-    "Genre": "Adventure",
-    "Publisher": "P?tion",
-    "IsAvailable": true,
-    "TotalCopies": 6,
-    "AvailableCopies": 6,
-    "Description": "A tale of revenge, betrayal, and redemption."
-  },
-  {
-    "Id": 25,
-    "Title": "Les Mis?rables",
-    "Author": "Victor Hugo",
-    "Genre": "Historical Fiction",
-    "Publisher": "A. Lacroix, Verboeckhoven & Cie.",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "A novel about the struggles of ex-convict Jean Valjean."
-  },
-  {
-    "Id": 26,
-    "Title": "The Stranger",
-    "Author": "Albert Camus",
-    "Genre": "Philosophical Fiction",
-    "Publisher": "Gallimard",
-    "IsAvailable": true,
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "A philosophical novel about absurdism and existentialism."
-  },
-  {
-    "Id": 27,
-    "Title": "One Hundred Years of Solitude",
-    "Author": "Gabriel Garc?a M?rquez",
-    "Genre": "Magical Realism",
-    "Publisher": "Editorial Sudamericana",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "A multi-generational story of the Buend?a family."
-  },
-  {
-    "Id": 28,
-    "Title": "The Metamorphosis",
-    "Author": "Franz Kafka",
-    "Genre": "Absurdist Fiction",
-    "Publisher": "Kurt Wolff Verlag",
-    "IsAvailable": true,
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "A novella about a man who transforms into a giant insect."
-  },
-  {
-    "Id": 29,
-    "Title": "The Trial",
-    "Author": "Franz Kafka",
-    "Genre": "Absurdist Fiction",
-    "Publisher": "Verlag Die Schmiede",
-    "IsAvailable": true,
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "A novel about a man prosecuted by a remote, inaccessible authority."
-  },
-  {
-    "Id": 30,
-    "Title": "The Sun Also Rises",
-    "Author": "Ernest Hemingway",
-    "Genre": "Literary Fiction",
-    "Publisher": "Charles Scribner's Sons",
-    "IsAvailable": true,
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "A novel about the disillusionment of the Lost Generation."
+    "Description": "A fantasy novel about the adventures of Bilbo Baggins.",
+    "Font": "Arial",
+    "Size": 12,
+    "Color": "Black",
+    "BackGroundColor": "White"
   }
 ]
