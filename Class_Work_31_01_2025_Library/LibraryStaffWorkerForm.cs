@@ -36,6 +36,9 @@ namespace Home_and_Class_Work_31_01_2025_Library
             textBoxTitle.Text = string.Empty;
             textBoxPublisher.Text = string.Empty;
             textBoxDescription.Text = string.Empty;
+            textBoxDescription.ForeColor = SystemColors.WindowText;
+            textBoxDescription.BackColor = SystemColors.Window;
+            textBoxDescription.Font = SystemFonts.DefaultFont;
         }
 
         private void btEdeteCreate_Click(object sender, EventArgs e)
@@ -67,18 +70,41 @@ namespace Home_and_Class_Work_31_01_2025_Library
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            if (bookListBox.SelectedItem is Book selectBook)
+            var saveBook = MessageBox.Show("Сохранить книгу?",
+                "Сохранение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (saveBook == DialogResult.Yes)
             {
-                selectBook.Author = textBoxAuthor.Text;
-                selectBook.Genre = textBoxGenre.Text;
-                selectBook.Title = textBoxTitle.Text;
-                selectBook.Publisher = textBoxPublisher.Text;
-                selectBook.Description = textBoxDescription.Text;
-                selectBook.TextColor = textBoxDescription.ForeColor.Name;
-                selectBook.TextBackGroundColor = textBoxDescription.BackColor.Name;
-                selectBook.TextFont = textBoxDescription.Font.Name;
-                selectBook.TextSize = (int)textBoxDescription.Font.Size;
+                if (bookListBox.SelectedItem is Book selectBook)
+                {
+                    selectBook.Author = textBoxAuthor.Text;
+                    selectBook.Genre = textBoxGenre.Text;
+                    selectBook.Title = textBoxTitle.Text;
+                    selectBook.Publisher = textBoxPublisher.Text;
+                    selectBook.Description = textBoxDescription.Text;
+                    selectBook.TextColor = textBoxDescription.ForeColor.Name;
+                    selectBook.TextBackGroundColor = textBoxDescription.BackColor.Name;
+                    selectBook.TextFont = textBoxDescription.Font.Name;
+                    selectBook.TextSize = (int)textBoxDescription.Font.Size;
+                }
+                else
+                {
+                    var listBooks = BookResurs.GetListBooks();
+                    var newBook = new Book(listBooks.Last().Id + 1,
+                        textBoxTitle.Text,
+                        textBoxAuthor.Text,
+                        textBoxGenre.Text,
+                        textBoxPublisher.Text,
+                        textBoxDescription.Text,
+                        textBoxDescription.Font.Name,
+                        (int)textBoxDescription.Font.Size,
+                        textBoxDescription.ForeColor.Name,
+                        textBoxDescription.BackColor.Name);
+                    listBooks.Add(newBook);
+                }
             }
+            
             IsEnable(false);
             UpdateWorkerForm();
         }
@@ -257,31 +283,82 @@ namespace Home_and_Class_Work_31_01_2025_Library
 
         private void deleteBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /* Реализовать удаление книги, перед этим проверить выделена ли книга 
-             (если нет - то выдать сообщение о необходимости выбрать)
-            Перед удаление повтороно запросить разрешение на удаление
-            */
+            if(bookListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Вы не выбрали книгу для удаления", 
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            var listBooks = BookResurs.GetListBooks();
+            var questionDel = MessageBox.Show("Удалить книгу из базы?",
+                "Удаление книги",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if(questionDel == DialogResult.Yes)
+            {
+                listBooks.RemoveAt(bookListBox.SelectedIndex);
+                UpdateWorkerForm();
+            }
         }
 
         private void createBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /* Реализовать создание книги
-             Добавляет новую книгу, нумерацию продолжает относительно Id в последней книге
-             */
+            UpdateWorkerForm();
+            IsEnable(true);
         }
 
         private void saveTextBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*
-             * Реализовать сохранение текста из книги в отдельный файл
-             */
+            if (string.IsNullOrEmpty(textBoxDescription.Text))
+            {
+                MessageBox.Show("Нет текста для сохранения.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt";
+            saveFileDialog.FilterIndex = 1;
+            // Создание дефолтного названия текста
+            string author = textBoxAuthor.Text;
+            string genre = textBoxGenre.Text;
+            string title = textBoxTitle.Text;
+            string publisher = textBoxPublisher.Text;
+            string fileName = $"{title}_{author}_{genre}_{publisher}.txt";
+            fileName = string.Join("_", fileName.Split(Path.GetInvalidFileNameChars())); // убераем спец символы
+            saveFileDialog.FileName = fileName;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.WriteAllText(saveFileDialog.FileName, textBoxDescription.Text);
+                    MessageBox.Show("Файл успешно сохранен.",
+                        "Успех",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при сохранении файла: {ex.Message}",
+                        "Ошибка", 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void loadTextInBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*
-             * Реализовать текста текста из файла в книгу
-             */
+            string TextFile = ""; OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "All txt files (*.txt)|*.txt";
+            open.FilterIndex = 1;// по умолчанию фильтруются // текстовые файлы
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader reader = File.OpenText(open.FileName); 
+                TextFile = reader.ReadToEnd(); // считываем файл до конца
+                reader.Close(); // закрываем reader}
+                textBoxDescription.Text = TextFile;
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Home_and_Class_Work_31_01_2025_Library.Data
             }
             return listBooks;
         }
-        private static void LoadListBooks(string filePath = null)
+        public static void LoadListBooks(string filePath = null)
         {
             if (filePath == null)
                 filePath = FilePath;
