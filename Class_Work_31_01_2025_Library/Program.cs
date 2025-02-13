@@ -2,17 +2,11 @@ namespace Home_and_Class_Work_31_01_2025_Library
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LibraryStaffWorkerForm());
-            //Application.Run(new FormAutorization());
+            Application.Run(new FormAutorization());
         }
     }
 }

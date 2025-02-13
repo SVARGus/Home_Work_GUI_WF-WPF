@@ -54,6 +54,7 @@ namespace Home_and_Class_Work_31_01_2025_Library
             textBoxDescription.ReadOnly = !Enabled;
             btSave.Enabled = Enabled;
             fornStileToolStripMenuItem.Enabled = Enabled;
+            textToolStripMenuItem.Enabled = Enabled;
             btEdeteCreate.Enabled = !Enabled;
             if (Enabled)
             {

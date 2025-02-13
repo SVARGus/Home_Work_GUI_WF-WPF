@@ -62,7 +62,15 @@ namespace Home_and_Class_Work_31_01_2025_Library
                                 this.Visible = true;
                                 break;
                             case UserRol.Visitor: 
-                                
+                                LibraryUserForm libraryUser = new LibraryUserForm();
+                                this.Visible = false;
+                                if(libraryUser.ShowDialog() == DialogResult.Cancel)
+                                {
+                                    libraryUser.Close();
+                                }
+                                textBoxLogin.Text = string.Empty;
+                                textBoxPassword.Text = string.Empty;
+                                this.Visible = true;
                                 break;
                         }
                         notSearchAccount = true;
